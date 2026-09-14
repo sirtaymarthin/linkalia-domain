@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linkalia — Tus enlaces y archivos, por fin ordenados</title>
+<meta name="description" content="Linkalia organiza tus enlaces y archivos por categorías, con colecciones que puedes compartir. Descárgala para Android.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #10161A;
+    --ink-2: #161F24;
+    --paper: #F3EFE7;
+    --amber: #D9A441;
+    --teal: #3F8F88;
+    --line: rgba(243, 239, 231, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Fondo: red de nodos conectados, motivo del propio concepto de "enlace" */
+  #bg-nodes {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.55;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6vh 6vw 4vh;
+  }
+
+  .kicker {
+    font-size: 0.95rem;
+    color: var(--teal);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.08;
+    max-width: 16ch;
+    color: var(--paper);
+  }
+
+  h1 .accent {
+    color: var(--amber);
+    font-style: italic;
+  }
+
+  p.lede {
+    margin-top: 1.5rem;
+    max-width: 46ch;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(243, 239, 231, 0.78);
+  }
+
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-top: 1.8rem;
+    max-width: 30rem;
+  }
+
+  .chip {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.88rem;
+    color: rgba(243, 239, 231, 0.85);
+    background: rgba(243, 239, 231, 0.04);
+  }
+
+  .download {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--ink-2);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 1.25rem 1.75rem;
+  }
+
+  .download img {
+    width: 108px;
+    height: 108px;
+    border-radius: 10px;
+    background: var(--paper);
+    padding: 6px;
+    display: block;
+  }
+
+  .download-text {
+    text-align: left;
+  }
+
+  .download-text .label {
+    font-size: 0.85rem;
+    color: rgba(243, 239, 231, 0.6);
+  }
+
+  .download-text .app-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    color: var(--paper);
+    margin-top: 0.15rem;
+  }
+
+  .download-text .hint {
+    margin-top: 0.4rem;
+    font-size: 0.82rem;
+    color: var(--teal);
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 1.5rem 1rem 2rem;
+    font-size: 0.82rem;
+    color: rgba(243, 239, 231, 0.4);
+  }
+
+  @media (max-width: 480px) {
+    .download {
+      flex-direction: column;
+      text-align: center;
+    }
+    .download-text { text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    main {
+      animation: rise 0.7s ease-out;
+    }
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<svg id="bg-nodes" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#3F8F88" stroke-width="1">
+    <line x1="120" y1="140" x2="340" y2="260" />
+    <line x1="340" y1="260" x2="300" y2="480" />
+    <line x1="340" y1="260" x2="560" y2="180" />
+    <line x1="560" y1="180" x2="760" y2="320" />
+    <line x1="300" y1="480" x2="540" y2="560" />
+    <line x1="540" y1="560" x2="760" y2="320" />
+    <line x1="760" y1="320" x2="980" y2="240" />
+    <line x1="980" y1="240" x2="1120" y2="400" />
+    <line x1="540" y1="560" x2="780" y2="660" />
+    <line x1="780" y1="660" x2="1020" y2="580" />
+    <line x1="120" y1="140" x2="180" y2="360" />
+    <line x1="180" y1="360" x2="300" y2="480" />
+  </g>
+  <g fill="#D9A441">
+    <circle cx="120" cy="140" r="4" />
+    <circle cx="340" cy="260" r="5.5" />
+    <circle cx="560" cy="180" r="4" />
+    <circle cx="300" cy="480" r="4.5" />
+    <circle cx="760" cy="320" r="6" />
+    <circle cx="540" cy="560" r="4.5" />
+    <circle cx="980" cy="240" r="4" />
+    <circle cx="1120" cy="400" r="4" />
+    <circle cx="780" cy="660" r="4.5" />
+    <circle cx="1020" cy="580" r="4" />
+    <circle cx="180" cy="360" r="3.5" />
+  </g>
+</svg>
+
+<main>
+  <p class="kicker">Marthinalia Software presenta</p>
+  <h1>Lo que guardas, <span class="accent">por fin</span> en su sitio</h1>
+  <p class="lede">
+    Linkalia organiza tus enlaces y archivos por categorías, los clasifica solo,
+    y te deja compartir colecciones enteras con quien quieras. Una librería personal
+    que no se pierde entre pestañas.
+  </p>
+
+  <div class="categories">
+    <span class="chip">Categorías automáticas</span>
+    <span class="chip">Colecciones colaborativas</span>
+    <span class="chip">Exportación HTML</span>
+    <span class="chip">100% en español</span>
+  </div>
+
+  <div class="download">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://play.google.com/store/apps/details?id=com.linkalia" alt="Código QR de descarga de Linkalia para Android" />
+    <div class="download-text">
+      <div class="label">Escanea para descargar</div>
+      <div class="app-name">Linkalia para Android</div>
+      <div class="hint">Disponible en Google Play</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Marthinalia Software · Linkalia
+</footer>
+
+</body>
+</html>
