@@ -3,8 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linkalia — Tus enlaces y archivos, por fin ordenados</title>
-  <meta name="description" content="Linkalia organiza tus enlaces y archivos por categorías, con colecciones que puedes compartir. Descárgala para Android.">
+  <title>Linkalia — Organizador de enlaces y archivos para Android</title>
+  <meta name="description" content="Linkalia, el organizador de enlaces y archivos para Android: clasifica por categorías, crea colecciones colaborativas y expórtalas a HTML. Descarga gratis.">
+  <link rel="canonical" href="https://linkalia.org/">
+
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://linkalia.org/">
+  <meta property="og:title" content="Linkalia — Organizador de enlaces y archivos para Android">
+  <meta property="og:description" content="Gestor de enlaces y archivos con categorías automáticas, colecciones colaborativas y exportación a HTML. Descarga gratis para Android.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Linkalia — Organizador de enlaces y archivos para Android">
+  <meta name="twitter:description" content="Gestor de enlaces y archivos con categorías automáticas, colecciones colaborativas y exportación a HTML.">
+
+  <!-- Datos estructurados para Google (rich results de app) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Linkalia",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "ProductivityApplication",
+      "description": "Linkalia es un organizador y gestor de enlaces y archivos para Android: clasifica por categorías automáticas, crea colecciones colaborativas para compartir y exporta todo a HTML.",
+      "url": "https://linkalia.org/",
+      "downloadUrl": "https://github.com/sirtaymarthin/linkalia-domain/releases/download/v2.0.1/linkalia_v2_0_1.apk",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -104,6 +135,13 @@
     h1 .accent {
       color: var(--brand-light);
       font-style: italic;
+    }
+
+    h2.subhead {
+      margin-top: 0.6rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--brand-mid);
     }
 
     p.lede {
@@ -329,6 +367,7 @@
   </svg>
 
   <h1 data-i18n="h1">Lo que guardas, <span class="accent">por fin</span> en su sitio</h1>
+  <h2 class="subhead" data-i18n="subhead">Organizador de enlaces y archivos para Android</h2>
   <p class="lede" data-i18n="lede">
     Linkalia organiza tus enlaces y archivos por categorías, los clasifica solo,
     y te deja compartir colecciones enteras con quien quieras. Una librería personal
@@ -371,9 +410,10 @@
 <script>
   const translations = {
     es: {
-      title: "Linkalia — Tus enlaces y archivos, por fin ordenados",
-      description: "Linkalia organiza tus enlaces y archivos por categorías, con colecciones que puedes compartir. Descárgala para Android.",
+      title: "Linkalia — Organizador de enlaces y archivos para Android",
+      description: "Linkalia, el organizador de enlaces y archivos para Android: clasifica por categorías, crea colecciones colaborativas y expórtalas a HTML. Descarga gratis.",
       h1: 'Lo que guardas, <span class="accent">por fin</span> en su sitio',
+      subhead: "Organizador de enlaces y archivos para Android",
       lede: "Linkalia organiza tus enlaces y archivos por categorías, los clasifica solo, y te deja compartir colecciones enteras con quien quieras. Una librería personal que no se pierde entre pestañas.",
       chip1: "Categorías automáticas",
       chip2: "Colecciones colaborativas",
@@ -386,9 +426,10 @@
       footer: "Linkalia"
     },
     en: {
-      title: "Linkalia — Your links and files, finally in order",
-      description: "Linkalia organizes your links and files into categories, with collections you can share. Download it for Android.",
+      title: "Linkalia — Link and File Organizer for Android",
+      description: "Linkalia is a link and file organizer for Android: sort into categories, build collaborative collections, and export to HTML. Free download.",
       h1: 'Everything you save, <span class="accent">finally</span> in its place',
+      subhead: "Link and File Organizer for Android",
       lede: "Linkalia organizes your links and files into categories, sorts them on its own, and lets you share whole collections with anyone. A personal library that never gets lost between tabs.",
       chip1: "Automatic categories",
       chip2: "Collaborative collections",
