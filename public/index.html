@@ -10,12 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #10161A;
-      --ink-2: #161F24;
-      --paper: #F3EFE7;
-      --amber: #D9A441;
-      --teal: #3F8F88;
-      --line: rgba(243, 239, 231, 0.12);
+      --ink: #150B10;
+      --ink-2: #1F1017;
+      --paper: #F6EEF1;
+      --brand: #C22A5F;
+      --brand-mid: #DC7A9C;
+      --brand-light: #EFB5C9;
+      --line: rgba(246, 238, 241, 0.12);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,7 +38,7 @@
       position: fixed;
       inset: 0;
       z-index: 0;
-      opacity: 0.55;
+      opacity: 0.4;
     }
 
     .lang-switch {
@@ -47,7 +48,7 @@
       z-index: 2;
       display: flex;
       gap: 0.4rem;
-      background: rgba(16, 22, 26, 0.7);
+      background: rgba(21, 11, 16, 0.7);
       border: 1px solid var(--line);
       border-radius: 999px;
       padding: 0.3rem;
@@ -58,7 +59,7 @@
       font-family: 'Inter', sans-serif;
       font-size: 0.82rem;
       font-weight: 500;
-      color: rgba(243, 239, 231, 0.55);
+      color: rgba(246, 238, 241, 0.55);
       background: transparent;
       border: none;
       border-radius: 999px;
@@ -68,8 +69,8 @@
     }
 
     .lang-switch button.active {
-      background: var(--amber);
-      color: var(--ink);
+      background: var(--brand);
+      color: var(--paper);
     }
 
     main {
@@ -84,9 +85,16 @@
       padding: 6vh 6vw 4vh;
     }
 
+    .app-icon {
+      width: 84px;
+      height: 84px;
+      margin-bottom: 1.6rem;
+      filter: drop-shadow(0 8px 24px rgba(194, 42, 95, 0.35));
+    }
+
     .kicker {
       font-size: 0.95rem;
-      color: var(--teal);
+      color: var(--brand-mid);
       font-weight: 500;
       letter-spacing: 0.01em;
       margin-bottom: 1.25rem;
@@ -102,7 +110,7 @@
     }
 
     h1 .accent {
-      color: var(--amber);
+      color: var(--brand-light);
       font-style: italic;
     }
 
@@ -111,7 +119,7 @@
       max-width: 46ch;
       font-size: 1.1rem;
       line-height: 1.6;
-      color: rgba(243, 239, 231, 0.78);
+      color: rgba(246, 238, 241, 0.78);
     }
 
     .categories {
@@ -128,8 +136,8 @@
       border-radius: 999px;
       padding: 0.4rem 1rem;
       font-size: 0.88rem;
-      color: rgba(243, 239, 231, 0.85);
-      background: rgba(243, 239, 231, 0.04);
+      color: rgba(246, 238, 241, 0.85);
+      background: rgba(194, 42, 95, 0.08);
     }
 
     .download {
@@ -156,7 +164,7 @@
 
     .download-text .label {
       font-size: 0.85rem;
-      color: rgba(243, 239, 231, 0.6);
+      color: rgba(246, 238, 241, 0.6);
     }
 
     .download-text .app-name {
@@ -169,7 +177,32 @@
     .download-text .hint {
       margin-top: 0.4rem;
       font-size: 0.82rem;
-      color: var(--teal);
+      color: var(--brand-mid);
+    }
+
+    .contact {
+      margin-top: 2.5rem;
+    }
+
+    .contact p {
+      font-size: 0.95rem;
+      color: rgba(246, 238, 241, 0.55);
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      color: var(--brand-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(239, 181, 201, 0.4);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--brand-light);
     }
 
     footer {
@@ -178,7 +211,7 @@
       text-align: center;
       padding: 1.5rem 1rem 2rem;
       font-size: 0.82rem;
-      color: rgba(243, 239, 231, 0.4);
+      color: rgba(246, 238, 241, 0.4);
     }
 
     @media (max-width: 480px) {
@@ -200,7 +233,7 @@
 <body>
 
 <svg id="bg-nodes" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-  <g stroke="#3F8F88" stroke-width="1">
+  <g stroke="#DC7A9C" stroke-width="1">
     <line x1="120" y1="140" x2="340" y2="260" />
     <line x1="340" y1="260" x2="300" y2="480" />
     <line x1="340" y1="260" x2="560" y2="180" />
@@ -214,7 +247,7 @@
     <line x1="120" y1="140" x2="180" y2="360" />
     <line x1="180" y1="360" x2="300" y2="480" />
   </g>
-  <g fill="#D9A441">
+  <g fill="#C22A5F">
     <circle cx="120" cy="140" r="4" />
     <circle cx="340" cy="260" r="5.5" />
     <circle cx="560" cy="180" r="4" />
@@ -235,6 +268,22 @@
 </div>
 
 <main>
+  <svg class="app-icon" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="54" cy="54" r="54" fill="#C22A5F" />
+    <g transform="translate(18,18) scale(0.035156)">
+      <path fill="#FFFFFF" d="M 1200.2 935.737 C 1244.65 948.119 1284.43 974.385 1311.09 1011.93 C 1440.06 1193.56 1309.17 1442.09 1140.28 1536.98 C 1078.99 1572.22 1010.18 1592.34 939.566 1595.66 C 908.281 1597.25 873.656 1596.2 841.909 1596.7 C 789.289 1597.53 742.775 1598.76 691.601 1584.27 C 607 1561.05 535.052 1505.25 491.517 1429.08 C 468.259 1386.63 454.323 1339.71 450.639 1291.45 C 449.505 1274.82 449.874 1254.05 449.993 1237.13 C 450.11 1220.57 449.52 1201.46 450.123 1185.2 C 450.063 1183.19 448.443 1147.07 452.51 1166.07 C 476.258 1257.56 546.739 1342.95 627.846 1389.98 C 677.62 1418.84 736.186 1439.39 793.826 1443.31 C 823.8 1445.36 855.536 1443.87 885.551 1443.67 C 924.603 1443.41 954.485 1444.28 993.014 1434.35 C 1066.01 1415.53 1127.91 1371.82 1165.73 1306.04 C 1182.03 1277.68 1193.27 1243.81 1197.68 1211.34 C 1202.16 1178.36 1200.79 1136.87 1200.67 1102.94 C 1200.17 1047.21 1200.02 991.471 1200.2 935.737 z" />
+      <path fill="#EFB5C9" d="M 450.123 1185.2 C 450.063 1183.19 448.443 1147.07 452.51 1166.07 C 449.952 1170.81 451.741 1177.41 450.123 1185.2 z" />
+      <path fill="#FFFFFF" d="M 1110.76 1200.21 C 1102.37 1250.16 1058.22 1298.89 1016.27 1324.37 C 976.198 1348.71 924.942 1363.9 877.957 1363.19 C 646.796 1359.7 449.895 1151.9 453.835 921.519 C 454.333 892.412 453.533 863.684 453.878 834.725 C 454.206 807.269 452.71 779.224 455.027 752.002 C 461.261 675.155 493.883 602.829 547.36 547.289 C 604.371 489.711 680.233 454.622 761.027 448.461 C 794.772 446.226 837.935 449.123 872.866 448.828 C 875.671 449.013 880.129 448.029 880.957 450.702 C 867.266 453.62 850.935 460.26 837.499 465.918 C 708.603 520.193 618.462 652.983 607.85 791.478 C 606.4 810.401 606.709 828.621 606.724 847.407 L 606.801 920.279 C 607.507 1078.14 726.056 1205.99 887.81 1201.29 C 908.827 1200.68 931.554 1201.21 952.801 1201.13 C 1005.46 1201.31 1058.11 1201 1110.76 1200.21 z" />
+      <path fill="#FFFFFF" d="M 848.551 1112.63 C 743.086 1081.59 685.44 979.677 686.719 873.7 C 688.038 764.377 736.295 661.926 813.04 585.1 C 887.86 509.099 987.198 462.081 1093.41 452.397 C 1117.52 450.291 1143.94 450.986 1168.37 451.017 L 1268.19 450.897 C 1433.89 451.014 1584.6 581.524 1596.4 748.773 C 1597.58 765.486 1597.22 782.41 1597.2 799.162 L 1597.04 874.075 L 1594.11 873.974 C 1556.17 722.811 1391.41 606.334 1238.24 603.05 C 1215.04 602.553 1190.79 603.847 1168.04 603.071 C 1100.91 600.782 1034.86 610.244 977.325 647.258 C 908.273 689.939 856.59 763.451 849.325 845.713 C 846.469 878.061 847.983 914.335 848.038 947.001 C 848.536 1002.21 848.707 1057.42 848.551 1112.63 z" />
+      <path fill="#FFFFFF" d="M 938.84 847.629 C 954.236 792.53 989.471 748.501 1040 719.911 C 1115.06 677.432 1196.35 675.734 1278.55 700.968 C 1428.46 746.982 1551.65 876.031 1584.65 1030.4 C 1597.63 1091.16 1594.13 1150.78 1594.44 1212.34 C 1594.57 1236.81 1595.3 1273.19 1593.18 1296.9 C 1591.29 1318.65 1587.39 1340.16 1581.54 1361.19 C 1556.55 1448.41 1503.75 1515.26 1424.84 1559.81 C 1348.36 1602.99 1267.76 1603.79 1182.34 1599.88 C 1177.27 1599.98 1172.13 1599.9 1167.09 1600.15 L 1167.38 1598.78 C 1169.87 1597.97 1171.45 1597.81 1174.09 1597.47 C 1266.09 1570.62 1343.85 1508.68 1390.59 1425 C 1419.28 1373.85 1436.33 1316.99 1440.53 1258.49 C 1442.49 1229.87 1441.46 1197.8 1441.76 1168.92 C 1442.21 1124.15 1443.17 1087.27 1430.58 1043.27 C 1410.55 973.453 1363.44 914.55 1299.73 879.674 C 1230.91 841.884 1179.73 847.08 1105.32 847.179 L 938.84 847.629 z" />
+      <path fill="#EFB5C9" d="M 1174.09 1597.47 C 1177.09 1599.18 1179 1598.98 1182.34 1599.88 C 1177.27 1599.98 1172.13 1599.9 1167.09 1600.15 L 1167.38 1598.78 C 1169.87 1597.97 1171.45 1597.81 1174.09 1597.47 z" />
+      <path fill="#DC7A9C" d="M 872.866 448.828 C 882.218 447.778 885.711 447.993 894.907 448.305 C 890.273 449.283 885.681 450.26 880.957 450.702 C 880.129 448.029 875.671 449.013 872.866 448.828 z" />
+      <path fill="#EFB5C9" d="M 1594.11 873.974 L 1597.04 874.075 C 1597.13 876.222 1597.28 878.13 1597.45 880.269 L 1595.57 882.976 C 1595.13 879.694 1594.84 877.197 1594.11 873.974 z" />
+      <path fill="#DC7A9C" d="M 1597.45 880.269 C 1599 885.862 1596.54 890.028 1595.57 882.976 L 1597.45 880.269 z" />
+      <path fill="#DC7A9C" d="M 1167.09 1600.15 C 1157.98 1601.43 1160.21 1598.86 1167.38 1598.78 L 1167.09 1600.15 z" />
+    </g>
+  </svg>
+
   <p class="kicker" data-i18n="kicker">Linkalia Software presenta</p>
   <h1 data-i18n="h1">Lo que guardas, <span class="accent">por fin</span> en su sitio</h1>
   <p class="lede" data-i18n="lede">
@@ -251,13 +300,18 @@
   </div>
 
   <a class="download" href="https://drive.google.com/uc?export=download&id=106j7J6lAOhNGI3frt56aGbXi4YZ7JsiZ" style="text-decoration: none; color: inherit;">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://drive.google.com/uc%3Fexport%3Ddownload%26id%3D106j7J6lAOhNGI3frt56aGbXi4YZ7JsiZ" alt="Código QR de descarga de Linkalia para Android" />
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=150B10&bgcolor=F6EEF1&data=https://drive.google.com/uc%3Fexport%3Ddownload%26id%3D106j7J6lAOhNGI3frt56aGbXi4YZ7JsiZ" alt="Código QR de descarga de Linkalia para Android" />
     <div class="download-text">
       <div class="label" data-i18n="dl-label">Escanea o pincha para descargar</div>
       <div class="app-name" data-i18n="dl-name">Linkalia para Android</div>
       <div class="hint" data-i18n="dl-hint">Descarga directa (APK)</div>
     </div>
   </a>
+
+  <div class="contact">
+    <p data-i18n="contact-text">¿Tienes dudas o quieres más información?</p>
+    <a href="mailto:info@linkalia.org" class="contact-link">info@linkalia.org</a>
+  </div>
 </main>
 
 <footer data-i18n="footer">
@@ -279,6 +333,7 @@
       "dl-label": "Escanea o pincha para descargar",
       "dl-name": "Linkalia para Android",
       "dl-hint": "Descarga directa (APK)",
+      "contact-text": "¿Tienes dudas o quieres más información?",
       footer: "Linkalia Software · Linkalia"
     },
     en: {
@@ -294,6 +349,7 @@
       "dl-label": "Scan or tap to download",
       "dl-name": "Linkalia for Android",
       "dl-hint": "Direct download (APK)",
+      "contact-text": "Have questions or want to know more?",
       footer: "Linkalia Software · Linkalia"
     }
   };
@@ -316,7 +372,6 @@
     localStorage.setItem('linkalia-lang', lang);
   }
 
-  // Idioma inicial: preferencia guardada > idioma del navegador > español por defecto
   const saved = localStorage.getItem('linkalia-lang');
   const browserLang = (navigator.language || navigator.userLanguage || 'es').toLowerCase();
   const initialLang = saved || (browserLang.startsWith('es') ? 'es' : (browserLang.startsWith('en') ? 'en' : 'es'));
