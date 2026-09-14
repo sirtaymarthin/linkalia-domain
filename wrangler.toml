@@ -3,3 +3,8 @@ compatibility_date = "2026-01-01"
 
 [assets]
 directory = "./public"
+
+routes = [
+    { pattern = "linkalia.org", custom_domain = true },
+    { pattern = "www.linkalia.org", custom_domain = true }
+]
