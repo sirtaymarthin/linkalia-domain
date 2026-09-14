@@ -2,4 +2,4 @@ name = "linkalia-domain"
 compatibility_date = "2026-01-01"
 
 [assets]
-directory = "./dist" # O "./build", "./public", etc.
+directory = "./public"
