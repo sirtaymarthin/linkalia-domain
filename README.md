@@ -4,7 +4,7 @@
 
 🌐 Web / Website: **https://linkalia.org** · 🇬🇧 English: **https://linkalia.org/en/**
 
-📥 Descarga directa (APK) / Direct download (APK): [linkalia_v2_0_1.apk](https://github.com/sirtaymarthin/linkalia-domain/releases/download/v2.0.1/linkalia_v2_0_1.apk)
+📥 Descarga directa (APK) / Direct download (APK): [linkalia.apk](https://github.com/sirtaymarthin/linkalia-domain/releases/latest/download/linkalia.apk)
 
 ---
 
