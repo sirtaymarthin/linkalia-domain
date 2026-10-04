@@ -1,91 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — Linkalia</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: Georgia, 'Times New Roman', serif;
-    background: #fafaf9;
-    color: #1a1a1a;
-    line-height: 1.8;
-    font-size: 17px;
-  }
-  header {
-    background: #B51A67;
-    padding: 32px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  header svg { flex-shrink: 0; }
-  header h1 { color: white; font-size: 26px; font-family: 'Georgia', serif; }
-  header p { color: rgba(255,255,255,0.75); font-size: 14px; font-family: sans-serif; margin-top: 2px; }
-  main {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
-  .updated {
-    display: inline-block;
-    background: #f3e8ef;
-    color: #B51A67;
-    font-size: 13px;
-    font-family: sans-serif;
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-bottom: 36px;
-  }
-  h2 {
-    font-size: 22px;
-    color: #B51A67;
-    margin: 40px 0 12px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #f3e8ef;
-  }
-  p { margin-bottom: 16px; }
-  ul { margin: 12px 0 16px 24px; }
-  li { margin-bottom: 8px; }
-  .highlight {
-    background: #f3e8ef;
-    border-left: 4px solid #B51A67;
-    padding: 16px 20px;
-    border-radius: 0 8px 8px 0;
-    margin: 24px 0;
-    font-family: sans-serif;
-    font-size: 15px;
-  }
-  a { color: #B51A67; }
-  footer {
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 13px;
-    color: #999;
-    padding: 32px 24px;
-    border-top: 1px solid #eee;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Linkalia</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="https://linkalia.org/en/privacy">
+  <link rel="alternate" hreflang="es" href="https://linkalia.org/privacidad">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #150B10;
+      --ink-2: #1F1017;
+      --paper: #F6EEF1;
+      --brand: #C22A5F;
+      --brand-mid: #DC7A9C;
+      --brand-light: #EFB5C9;
+      --line: rgba(246, 238, 241, 0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    #bg-nodes {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    .lang-switch {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.25rem;
+      z-index: 3;
+      display: flex;
+      gap: 0.4rem;
+      background: rgba(21, 11, 16, 0.7);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.3rem;
+      backdrop-filter: blur(6px);
+    }
+    .lang-switch a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(246, 238, 241, 0.55);
+      background: transparent;
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-switch a.active { background: var(--brand); color: var(--paper); }
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .header-home {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+      color: var(--paper);
+      transition: opacity 0.2s;
+    }
+    .header-home:hover { opacity: 0.8; }
+    .header-home img {
+      width: 40px;
+      height: 40px;
+      filter: drop-shadow(0 4px 12px rgba(194,42,95,0.4));
+    }
+    .header-home span {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--paper);
+    }
+    .header-label {
+      margin-left: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--brand-mid);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+      width: 100%;
+    }
+    .updated {
+      display: inline-block;
+      background: rgba(194, 42, 95, 0.15);
+      border: 1px solid rgba(194, 42, 95, 0.3);
+      color: var(--brand-light);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 2.5rem;
+    }
+    .intro {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(246, 238, 241, 0.8);
+      margin-bottom: 1.5rem;
+    }
+    .highlight {
+      background: rgba(194, 42, 95, 0.1);
+      border-left: 3px solid var(--brand);
+      padding: 1rem 1.25rem;
+      border-radius: 0 10px 10px 0;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.97rem;
+      line-height: 1.65;
+      color: rgba(246, 238, 241, 0.85);
+    }
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--brand-light);
+      margin: 2.5rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    p {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: rgba(246, 238, 241, 0.78);
+      margin-bottom: 1rem;
+    }
+    ul { margin: 0.5rem 0 1rem 1.5rem; }
+    li {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: rgba(246, 238, 241, 0.78);
+      margin-bottom: 0.4rem;
+    }
+    a { color: var(--brand-light); text-underline-offset: 3px; }
+    a:hover { color: var(--paper); }
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      font-size: 0.82rem;
+      color: rgba(246, 238, 241, 0.35);
+      border-top: 1px solid var(--line);
+    }
+    footer a { color: inherit; }
+    @media (max-width: 600px) {
+      main { padding: 2rem 1.25rem 4rem; }
+      header { padding: 1.5rem 1.25rem 1rem; }
+    }
+  </style>
 </head>
 <body>
 
+<svg id="bg-nodes" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <circle cx="160" cy="200" r="320" fill="var(--brand)" opacity="0.08"/>
+  <circle cx="700" cy="500" r="260" fill="var(--brand)" opacity="0.06"/>
+</svg>
+
+<nav class="lang-switch" aria-label="Idioma / Language">
+  <a href="/privacidad" hreflang="es" lang="es">ES</a>
+  <a href="/en/privacy" hreflang="en" lang="en" class="active" aria-current="true">EN</a>
+</nav>
+
 <header>
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.15"/>
-    <circle cx="24" cy="24" r="8" fill="white"/>
-  </svg>
-  <div>
-    <h1>Linkalia</h1>
-    <p>Privacy Policy</p>
+  <div class="header-inner">
+    <a href="/en/" class="header-home" aria-label="Back to Linkalia home">
+      <img src="/icon-192.png" alt="Linkalia" width="40" height="40">
+      <span>Linkalia</span>
+    </a>
+    <span class="header-label">Privacy</span>
   </div>
 </header>
 
 <main>
-
   <span class="updated">Last updated: September 2026</span>
 
-  <p>At Linkalia, we take the privacy of our users very seriously. This policy clearly explains what information we collect, why we collect it, and how we protect it.</p>
+  <p class="intro">At Linkalia, we take the privacy of our users very seriously. This policy clearly explains what information we collect, why we collect it, and how we protect it.</p>
 
   <div class="highlight">
     Linkalia is designed from the ground up to collect as little data as possible. It does not require registration, you do not need to provide your name or email address, and we do not display advertising.
@@ -95,17 +219,16 @@
   <p>The data controller is the developer of Linkalia. You can contact us at any time at <a href="mailto:info@linkalia.org">info@linkalia.org</a>.</p>
 
   <h2>2. What data we collect</h2>
-
-  <p><strong>Anonymous device identifier</strong><br>
+  <p><strong style="color:var(--paper)">Anonymous device identifier</strong><br>
   When you open the application for the first time, a unique random identifier (UUID) is automatically generated on your device. This identifier is not linked to your name, email address, phone number, or any personal data. It is used solely to manage your collections and your storage quota on the server.</p>
 
-  <p><strong>Username (optional)</strong><br>
+  <p><strong style="color:var(--paper)">Username (optional)</strong><br>
   You may choose a visible name to identify yourself in collaborative collections. This name is entirely free — you can use a pseudonym or any text you prefer. We do not verify it or link it to any real identity.</p>
 
-  <p><strong>Content you provide</strong><br>
+  <p><strong style="color:var(--paper)">Content you provide</strong><br>
   The links, documents, images, and files you save in Linkalia are stored on servers located in the European Union (Cloudflare R2, EU jurisdiction). This content belongs to you and you control it at all times.</p>
 
-  <p><strong>Subscription data</strong><br>
+  <p><strong style="color:var(--paper)">Subscription data</strong><br>
   If you purchase a Premium subscription, the transaction is handled entirely through Google Play. Linkalia only receives confirmation that the subscription is valid — we do not have access to your credit card, payment data, or billing information.</p>
 
   <h2>3. What data we do NOT collect</h2>
@@ -127,42 +250,39 @@
   <p>We do not use your data for advertising, nor do we share it with third parties for commercial purposes.</p>
 
   <h2>5. Where data is stored</h2>
-  <p>All content you upload to collaborative collections or Spaces is stored on Cloudflare servers under European Union jurisdiction. Cloudflare acts as a data processor and holds the relevant security certifications (ISO 27001, SOC 2). You can review their privacy policy at <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">cloudflare.com/privacypolicy</a>.</p>
-
+  <p>All content you upload to collaborative collections or Spaces is stored on Cloudflare servers under European Union jurisdiction. Cloudflare holds the relevant security certifications (ISO 27001, SOC 2). You can review their privacy policy at <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a>.</p>
   <p>Personal collections that you do not share are stored exclusively on your device and are not sent to any server.</p>
 
   <h2>6. How long we retain data</h2>
-  <p>Your content remains on our servers for as long as you have the application installed and active. If you delete a collaborative collection, the content is permanently and immediately removed from our servers. If you wish to delete all your data, please write to us at <a href="mailto:info@linkalia.org">info@linkalia.org</a> providing your account identifier (available in Settings within the app) and we will delete it within a maximum of 30 days.</p>
+  <p>Your content remains on our servers for as long as you have the application installed and active. If you delete a collaborative collection, the content is permanently and immediately removed. To delete all your data, write to <a href="mailto:info@linkalia.org">info@linkalia.org</a> with your account identifier (available in Settings) and we will delete it within 30 days.</p>
 
   <h2>7. Your rights</h2>
-  <p>Under the General Data Protection Regulation (GDPR) of the European Union, you have the right to:</p>
+  <p>Under the GDPR you have the right to:</p>
   <ul>
-    <li><strong>Access:</strong> know what data we hold about you</li>
-    <li><strong>Rectification:</strong> correct inaccurate data</li>
-    <li><strong>Erasure:</strong> request deletion of your data</li>
-    <li><strong>Portability:</strong> receive your data in a readable format</li>
-    <li><strong>Objection:</strong> object to certain types of processing</li>
+    <li><strong style="color:var(--paper)">Access:</strong> know what data we hold about you</li>
+    <li><strong style="color:var(--paper)">Rectification:</strong> correct inaccurate data</li>
+    <li><strong style="color:var(--paper)">Erasure:</strong> request deletion of your data</li>
+    <li><strong style="color:var(--paper)">Portability:</strong> receive your data in a readable format</li>
+    <li><strong style="color:var(--paper)">Objection:</strong> object to certain types of processing</li>
   </ul>
-  <p>To exercise any of these rights, write to us at <a href="mailto:info@linkalia.org">info@linkalia.org</a>. We will respond within a maximum of 30 days.</p>
+  <p>Write to us at <a href="mailto:info@linkalia.org">info@linkalia.org</a>. We will respond within 30 days.</p>
 
   <h2>8. Security</h2>
-  <p>All communication between the application and our servers uses HTTPS with TLS encryption. Collection access tokens are stored as SHA-256 hashes and never in plain text. Your anonymous account identifier is generated locally and is not transmitted in any way that could identify you.</p>
+  <p>All communication between the application and our servers uses HTTPS with TLS encryption. Access tokens are stored as SHA-256 hashes and never in plain text. Your anonymous account identifier is generated locally and does not allow you to be identified.</p>
 
   <h2>9. Minors</h2>
-  <p>Linkalia is not directed at children under the age of 16. If you are under 16, please do not use the application without the consent of your legal guardian. If we become aware that we have collected data from a minor without appropriate consent, we will delete it as soon as possible.</p>
+  <p>Linkalia is not directed at children under the age of 16. If you are under 16, please do not use the application without the consent of your legal guardian.</p>
 
   <h2>10. Changes to this policy</h2>
-  <p>If we make significant changes to this privacy policy, we will notify you within the app itself. The date of the last update always appears at the top of this document. Continued use of the application after changes have been made implies acceptance of the new policy.</p>
+  <p>If we make significant changes, we will notify you within the app. The date of the last update always appears at the top of this document.</p>
 
   <h2>11. Contact</h2>
-  <p>If you have any questions, concerns, or complaints relating to the privacy of your data, you can write to us at:</p>
   <p><a href="mailto:info@linkalia.org">info@linkalia.org</a></p>
-  <p>You may also file a complaint with the Spanish Data Protection Agency (AEPD) at <a href="https://www.aepd.es" target="_blank">aepd.es</a> if you believe the processing of your data does not comply with applicable regulations.</p>
-
+  <p>You may also file a complaint with the <a href="https://www.aepd.es" target="_blank" rel="noopener">Spanish Data Protection Agency (AEPD)</a>.</p>
 </main>
 
 <footer>
-  &copy; 2026 Linkalia · <a href="mailto:info@linkalia.org">info@linkalia.org</a> · <a href="https://linkalia.org">linkalia.org</a>
+  <a href="/en/">Linkalia</a> &nbsp;·&nbsp; <a href="mailto:info@linkalia.org">info@linkalia.org</a>
 </footer>
 
 </body>

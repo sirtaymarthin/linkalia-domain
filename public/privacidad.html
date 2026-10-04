@@ -1,91 +1,217 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Política de Privacidad — Linkalia</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: Georgia, 'Times New Roman', serif;
-    background: #fafaf9;
-    color: #1a1a1a;
-    line-height: 1.8;
-    font-size: 17px;
-  }
-  header {
-    background: #B51A67;
-    padding: 32px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  header svg { flex-shrink: 0; }
-  header h1 { color: white; font-size: 26px; font-family: 'Georgia', serif; }
-  header p { color: rgba(255,255,255,0.75); font-size: 14px; font-family: sans-serif; margin-top: 2px; }
-  main {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
-  .updated {
-    display: inline-block;
-    background: #f3e8ef;
-    color: #B51A67;
-    font-size: 13px;
-    font-family: sans-serif;
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-bottom: 36px;
-  }
-  h2 {
-    font-size: 22px;
-    color: #B51A67;
-    margin: 40px 0 12px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #f3e8ef;
-  }
-  p { margin-bottom: 16px; }
-  ul { margin: 12px 0 16px 24px; }
-  li { margin-bottom: 8px; }
-  .highlight {
-    background: #f3e8ef;
-    border-left: 4px solid #B51A67;
-    padding: 16px 20px;
-    border-radius: 0 8px 8px 0;
-    margin: 24px 0;
-    font-family: sans-serif;
-    font-size: 15px;
-  }
-  a { color: #B51A67; }
-  footer {
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 13px;
-    color: #999;
-    padding: 32px 24px;
-    border-top: 1px solid #eee;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad — Linkalia</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="alternate" hreflang="es" href="https://linkalia.org/privacidad">
+  <link rel="alternate" hreflang="en" href="https://linkalia.org/en/privacy">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #150B10;
+      --ink-2: #1F1017;
+      --paper: #F6EEF1;
+      --brand: #C22A5F;
+      --brand-mid: #DC7A9C;
+      --brand-light: #EFB5C9;
+      --line: rgba(246, 238, 241, 0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+    #bg-nodes {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    .lang-switch {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.25rem;
+      z-index: 3;
+      display: flex;
+      gap: 0.4rem;
+      background: rgba(21, 11, 16, 0.7);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.3rem;
+      backdrop-filter: blur(6px);
+    }
+    .lang-switch a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(246, 238, 241, 0.55);
+      background: transparent;
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.8rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-switch a.active { background: var(--brand); color: var(--paper); }
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .header-home {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-decoration: none;
+      color: var(--paper);
+      transition: opacity 0.2s;
+    }
+    .header-home:hover { opacity: 0.8; }
+    .header-home img {
+      width: 40px;
+      height: 40px;
+      filter: drop-shadow(0 4px 12px rgba(194,42,95,0.4));
+    }
+    .header-home span {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--paper);
+    }
+    .header-label {
+      margin-left: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--brand-mid);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    main {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+      width: 100%;
+    }
+    .updated {
+      display: inline-block;
+      background: rgba(194, 42, 95, 0.15);
+      border: 1px solid rgba(194, 42, 95, 0.3);
+      color: var(--brand-light);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 2.5rem;
+    }
+    .intro {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(246, 238, 241, 0.8);
+      margin-bottom: 1.5rem;
+    }
+    .highlight {
+      background: rgba(194, 42, 95, 0.1);
+      border-left: 3px solid var(--brand);
+      padding: 1rem 1.25rem;
+      border-radius: 0 10px 10px 0;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.97rem;
+      line-height: 1.65;
+      color: rgba(246, 238, 241, 0.85);
+    }
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--brand-light);
+      margin: 2.5rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    p {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: rgba(246, 238, 241, 0.78);
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin: 0.5rem 0 1rem 1.5rem;
+    }
+    li {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: rgba(246, 238, 241, 0.78);
+      margin-bottom: 0.4rem;
+    }
+    a { color: var(--brand-light); text-underline-offset: 3px; }
+    a:hover { color: var(--paper); }
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      font-size: 0.82rem;
+      color: rgba(246, 238, 241, 0.35);
+      border-top: 1px solid var(--line);
+    }
+    footer a { color: inherit; }
+    @media (max-width: 600px) {
+      main { padding: 2rem 1.25rem 4rem; }
+      header { padding: 1.5rem 1.25rem 1rem; }
+    }
+  </style>
 </head>
 <body>
 
+<svg id="bg-nodes" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <circle cx="160" cy="200" r="320" fill="var(--brand)" opacity="0.08"/>
+  <circle cx="700" cy="500" r="260" fill="var(--brand)" opacity="0.06"/>
+</svg>
+
+<nav class="lang-switch" aria-label="Idioma / Language">
+  <a href="/privacidad" hreflang="es" lang="es" class="active" aria-current="true">ES</a>
+  <a href="/en/privacy" hreflang="en" lang="en">EN</a>
+</nav>
+
 <header>
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-    <circle cx="24" cy="24" r="24" fill="white" fill-opacity="0.15"/>
-    <circle cx="24" cy="24" r="8" fill="white"/>
-  </svg>
-  <div>
-    <h1>Linkalia</h1>
-    <p>Política de Privacidad</p>
+  <div class="header-inner">
+    <a href="/" class="header-home" aria-label="Volver a la página principal de Linkalia">
+      <img src="/icon-192.png" alt="Linkalia" width="40" height="40">
+      <span>Linkalia</span>
+    </a>
+    <span class="header-label">Privacidad</span>
   </div>
 </header>
 
 <main>
-
   <span class="updated">Última actualización: septiembre de 2026</span>
 
-  <p>En Linkalia nos tomamos muy en serio la privacidad de las personas que usan nuestra aplicación. Esta política explica de forma clara qué información recopilamos, por qué la recopilamos y cómo la protegemos.</p>
+  <p class="intro">En Linkalia nos tomamos muy en serio la privacidad de las personas que usan nuestra aplicación. Esta política explica de forma clara qué información recopilamos, por qué la recopilamos y cómo la protegemos.</p>
 
   <div class="highlight">
     Linkalia está diseñada desde el principio para recopilar la menor cantidad de datos posible. No requiere registro, no tienes que darnos tu nombre ni tu correo electrónico, y no mostramos publicidad.
@@ -95,17 +221,16 @@
   <p>El responsable del tratamiento de datos es el desarrollador de Linkalia. Puedes contactarnos en cualquier momento a través de <a href="mailto:info@linkalia.org">info@linkalia.org</a>.</p>
 
   <h2>2. Qué datos recogemos</h2>
-
-  <p><strong>Identificador anónimo de dispositivo</strong><br>
+  <p><strong style="color:var(--paper)">Identificador anónimo de dispositivo</strong><br>
   Al abrir la aplicación por primera vez, se genera automáticamente un identificador único aleatorio (UUID) en tu dispositivo. Este identificador no está vinculado a tu nombre, correo, número de teléfono ni ningún dato personal. Se usa únicamente para gestionar tus colecciones y tu cuota de almacenamiento en el servidor.</p>
 
-  <p><strong>Nombre de usuario (opcional)</strong><br>
+  <p><strong style="color:var(--paper)">Nombre de usuario (opcional)</strong><br>
   Puedes elegir un nombre visible para identificarte en colecciones colaborativas. Este nombre es totalmente libre — puedes usar un pseudónimo o cualquier texto que prefieras. No lo verificamos ni lo vinculamos a ninguna identidad real.</p>
 
-  <p><strong>Contenido que tú introduces</strong><br>
+  <p><strong style="color:var(--paper)">Contenido que tú introduces</strong><br>
   Los enlaces, documentos, imágenes y archivos que guardas en Linkalia se almacenan en servidores ubicados en la Unión Europea (Cloudflare R2, jurisdicción EU). Este contenido es tuyo y lo controlas tú en todo momento.</p>
 
-  <p><strong>Datos de suscripción</strong><br>
+  <p><strong style="color:var(--paper)">Datos de suscripción</strong><br>
   Si adquieres una suscripción Premium, la transacción se gestiona íntegramente a través de Google Play. Linkalia únicamente recibe una confirmación de que la suscripción es válida — no tenemos acceso a tu tarjeta de crédito, datos de pago ni información de facturación.</p>
 
   <h2>3. Qué datos NO recogemos</h2>
@@ -127,42 +252,39 @@
   <p>No utilizamos tus datos para publicidad, ni los cedemos a terceros con fines comerciales.</p>
 
   <h2>5. Dónde se almacenan los datos</h2>
-  <p>Todo el contenido que subes a colecciones colaborativas o Espacios se almacena en servidores de Cloudflare con jurisdicción en la Unión Europea. Cloudflare actúa como encargado del tratamiento y cuenta con las certificaciones de seguridad correspondientes (ISO 27001, SOC 2). Puedes consultar su política de privacidad en <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">cloudflare.com/privacypolicy</a>.</p>
-
+  <p>Todo el contenido que subes a colecciones colaborativas o Espacios se almacena en servidores de Cloudflare con jurisdicción en la Unión Europea. Cloudflare actúa como encargado del tratamiento y cuenta con las certificaciones de seguridad correspondientes (ISO 27001, SOC 2). Puedes consultar su política en <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a>.</p>
   <p>Las colecciones propias que no compartes se almacenan exclusivamente en tu dispositivo y no se envían a ningún servidor.</p>
 
   <h2>6. Cuánto tiempo conservamos los datos</h2>
-  <p>Tu contenido permanece en los servidores mientras tengas la aplicación instalada y activa. Si eliminas una colección colaborativa, el contenido se borra de los servidores de forma permanente e inmediata. Si deseas eliminar todos tus datos, escríbenos a <a href="mailto:info@linkalia.org">info@linkalia.org</a> indicando tu identificador de cuenta (disponible en Ajustes dentro de la app) y lo eliminaremos en un plazo máximo de 30 días.</p>
+  <p>Tu contenido permanece en los servidores mientras tengas la aplicación instalada y activa. Si eliminas una colección colaborativa, el contenido se borra de los servidores de forma permanente e inmediata. Si deseas eliminar todos tus datos, escríbenos a <a href="mailto:info@linkalia.org">info@linkalia.org</a> indicando tu identificador de cuenta (disponible en Ajustes) y lo eliminaremos en un plazo máximo de 30 días.</p>
 
   <h2>7. Tus derechos</h2>
-  <p>De acuerdo con el Reglamento General de Protección de Datos (RGPD) de la Unión Europea, tienes derecho a:</p>
+  <p>De acuerdo con el RGPD, tienes derecho a:</p>
   <ul>
-    <li><strong>Acceso:</strong> saber qué datos tenemos sobre ti</li>
-    <li><strong>Rectificación:</strong> corregir datos inexactos</li>
-    <li><strong>Supresión:</strong> solicitar el borrado de tus datos</li>
-    <li><strong>Portabilidad:</strong> recibir tus datos en un formato legible</li>
-    <li><strong>Oposición:</strong> oponerte a determinados tratamientos</li>
+    <li><strong style="color:var(--paper)">Acceso:</strong> saber qué datos tenemos sobre ti</li>
+    <li><strong style="color:var(--paper)">Rectificación:</strong> corregir datos inexactos</li>
+    <li><strong style="color:var(--paper)">Supresión:</strong> solicitar el borrado de tus datos</li>
+    <li><strong style="color:var(--paper)">Portabilidad:</strong> recibir tus datos en un formato legible</li>
+    <li><strong style="color:var(--paper)">Oposición:</strong> oponerte a determinados tratamientos</li>
   </ul>
-  <p>Para ejercer cualquiera de estos derechos, escríbenos a <a href="mailto:info@linkalia.org">info@linkalia.org</a>. Responderemos en un plazo máximo de 30 días.</p>
+  <p>Escríbenos a <a href="mailto:info@linkalia.org">info@linkalia.org</a>. Responderemos en un plazo máximo de 30 días.</p>
 
   <h2>8. Seguridad</h2>
-  <p>Toda la comunicación entre la aplicación y los servidores se realiza mediante HTTPS con cifrado TLS. Los tokens de acceso a las colecciones se almacenan como hashes SHA-256 y nunca en texto plano. El identificador anónimo de tu cuenta se genera localmente y no se transmite de forma que permita identificarte.</p>
+  <p>Toda la comunicación entre la aplicación y los servidores se realiza mediante HTTPS con cifrado TLS. Los tokens de acceso se almacenan como hashes SHA-256 y nunca en texto plano. El identificador anónimo de tu cuenta se genera localmente y no permite identificarte.</p>
 
   <h2>9. Menores de edad</h2>
-  <p>Linkalia no está dirigida a menores de 16 años. Si eres menor de 16 años, no uses la aplicación sin el consentimiento de tu tutor legal. Si tenemos conocimiento de que hemos recopilado datos de un menor sin el consentimiento adecuado, los eliminaremos a la mayor brevedad posible.</p>
+  <p>Linkalia no está dirigida a menores de 16 años. Si eres menor de 16 años, no uses la aplicación sin el consentimiento de tu tutor legal.</p>
 
   <h2>10. Cambios en esta política</h2>
-  <p>Si realizamos cambios significativos en esta política de privacidad, lo notificaremos dentro de la propia aplicación. La fecha de la última actualización siempre aparece al inicio de este documento. El uso continuado de la aplicación tras los cambios implica la aceptación de la nueva política.</p>
+  <p>Si realizamos cambios significativos, lo notificaremos dentro de la app. La fecha de la última actualización siempre aparece al inicio de este documento.</p>
 
   <h2>11. Contacto</h2>
-  <p>Si tienes cualquier pregunta, duda o reclamación relacionada con la privacidad de tus datos, puedes escribirnos a:</p>
   <p><a href="mailto:info@linkalia.org">info@linkalia.org</a></p>
-  <p>También puedes presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) en <a href="https://www.aepd.es" target="_blank">aepd.es</a> si consideras que el tratamiento de tus datos no es conforme a la normativa.</p>
-
+  <p>También puedes presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos (AEPD)</a>.</p>
 </main>
 
 <footer>
-  &copy; 2026 Linkalia · <a href="mailto:info@linkalia.org">info@linkalia.org</a> · <a href="https://linkalia.org">linkalia.org</a>
+  <a href="/">Linkalia</a> &nbsp;·&nbsp; <a href="mailto:info@linkalia.org">info@linkalia.org</a>
 </footer>
 
 </body>
