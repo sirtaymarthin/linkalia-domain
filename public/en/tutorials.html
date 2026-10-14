@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video tutorials — Linkalia</title>
+<meta name="description" content="Short videos to learn Linkalia: save from WhatsApp, links and files, create collections and categories, and share.">
+<link rel="canonical" href="https://linkalia.org/en/tutorials">
+<link rel="alternate" hreflang="es" href="https://linkalia.org/tutoriales">
+<link rel="alternate" hreflang="en" href="https://linkalia.org/en/tutorials">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#150B10;--ink-2:#1F1017;--paper:#F6EEF1;--brand:#C22A5F;--brand-mid:#DC7A9C;--brand-light:#EFB5C9;--line:rgba(246,238,241,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;min-height:100vh}
+a{color:inherit}
+.lang-switch{position:fixed;top:1.25rem;right:1.25rem;z-index:3;display:flex;gap:.4rem;background:rgba(21,11,16,.7);border:1px solid var(--line);border-radius:999px;padding:.3rem;backdrop-filter:blur(6px)}
+.lang-switch a{font-size:.82rem;font-weight:500;color:rgba(246,238,241,.55);border-radius:999px;padding:.35rem .8rem;text-decoration:none}
+.lang-switch a.active{background:var(--brand);color:var(--paper)}
+.back{position:fixed;top:1.25rem;left:1.25rem;z-index:3;font-size:.85rem;color:rgba(246,238,241,.7);text-decoration:none;background:rgba(21,11,16,.7);border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem}
+header{text-align:center;padding:5.5rem 6vw 1rem}
+h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2rem,5vw,3.2rem);line-height:1.1}
+h1 .accent{color:var(--brand-light);font-style:italic}
+.lede{margin:1rem auto 0;max-width:46ch;font-size:1.05rem;line-height:1.6;color:rgba(246,238,241,.75)}
+main{max-width:1100px;margin:0 auto;padding:1rem 5vw 3rem}
+h2{font-family:'Fraunces',serif;font-weight:500;font-size:1.45rem;margin:2.4rem 0 1rem;color:var(--brand-light)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.1rem}
+.card{background:var(--ink-2);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;text-align:left;color:inherit;font:inherit;transition:transform .15s,border-color .15s}
+.card:hover,.card:focus-visible{transform:translateY(-2px);border-color:var(--brand-mid);outline:none}
+.card img{display:block;width:100%;height:auto;aspect-ratio:8/5;object-fit:cover}
+.card .t{padding:.85rem 1rem .2rem;font-weight:600;font-size:1rem}
+.card .d{padding:0 1rem 1rem;font-size:.86rem;line-height:1.5;color:rgba(246,238,241,.65)}
+.player{position:fixed;inset:0;z-index:10;display:none;align-items:center;justify-content:center;background:rgba(10,5,8,.88);padding:1rem}
+.player.open{display:flex}
+.player .box{display:flex;flex-direction:column;align-items:center;gap:.8rem;max-height:100%}
+.player video{max-height:calc(100vh - 7rem);max-width:100%;border-radius:18px;background:#000;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.player .cap{font-weight:600;text-align:center}
+.player button{position:absolute;top:1rem;right:1rem;background:var(--brand);color:var(--paper);border:0;border-radius:999px;padding:.5rem 1rem;font:inherit;font-size:.85rem;cursor:pointer}
+footer{text-align:center;padding:1.5rem 1rem 2rem;font-size:.82rem;color:rgba(246,238,241,.4)}
+footer a{opacity:.7;text-underline-offset:3px}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9EYV2RXZZ9"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9EYV2RXZZ9');</script>
+</head>
+<body>
+<a class="back" href="/en/">← Home</a>
+<nav class="lang-switch" aria-label="Idioma / Language">
+  <a href="/tutoriales" hreflang="es" lang="es">ES</a>
+  <a href="/en/tutorials" hreflang="en" lang="en" class="active" aria-current="true">EN</a>
+</nav>
+<header><h1>Learn Linkalia <span class="accent">on video</span></h1><p class="lede">Short videos, under a minute each. The same ones you will find inside the app, in Settings → Tutorials.</p></header>
+<main><h2>1 · Save from other apps</h2><div class="grid"><button class="card" onclick="play(this)" data-id="09_whatsapp" data-src="/tutoriales/en/09_whatsapp.mp4" data-poster="/tutoriales/en/09_whatsapp.jpg" data-title="Save from WhatsApp"><img src="/tutoriales/en/09_whatsapp.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">Save from WhatsApp</div><div class="d">Long-press the photo or document → ⋮ → Share → Linkalia. Pick the collection and category and tap Save here.</div></button><button class="card" onclick="play(this)" data-id="10_enlaces" data-src="/tutoriales/en/10_enlaces.mp4" data-poster="/tutoriales/en/10_enlaces.jpg" data-title="YouTube and Instagram links"><img src="/tutoriales/en/10_enlaces.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">YouTube and Instagram links</div><div class="d">Copy the link (in WhatsApp: long-press it → ⋮ → Copy), then in Linkalia tap + → Add link: the keyboard offers to paste it. The title and image appear on their own.</div></button><button class="card" onclick="play(this)" data-id="11_archivos" data-src="/tutoriales/en/11_archivos.mp4" data-poster="/tutoriales/en/11_archivos.jpg" data-title="Save files from Files"><img src="/tutoriales/en/11_archivos.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">Save files from Files</div><div class="d">In Files, long-press the file → Share → Linkalia. Pick the category and tap Save here.</div></button></div><h2>2 · First steps</h2><div class="grid"><button class="card" onclick="play(this)" data-id="01_crear_coleccion" data-src="/tutoriales/en/01_crear_coleccion.mp4" data-poster="/tutoriales/en/01_crear_coleccion.jpg" data-title="Create a collection"><img src="/tutoriales/en/01_crear_coleccion.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">Create a collection</div><div class="d">Tap the folder with + in the library, type a name, pick an icon and tap Create. It starts private, with its categories.</div></button><button class="card" onclick="play(this)" data-id="02_categorias" data-src="/tutoriales/en/02_categorias.mp4" data-poster="/tutoriales/en/02_categorias.jpg" data-title="Create a category"><img src="/tutoriales/en/02_categorias.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">Create a category</div><div class="d">Inside a collection: + → New category. Pick a name and an icon; to edit or delete it, use its ⋮ menu.</div></button><button class="card" onclick="play(this)" data-id="03_anadir_enlace" data-src="/tutoriales/en/03_anadir_enlace.mp4" data-poster="/tutoriales/en/03_anadir_enlace.jpg" data-title="Add a link"><img src="/tutoriales/en/03_anadir_enlace.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">Add a link</div><div class="d">+ → Add link, paste the address and pick the category. The title and image appear on their own.</div></button><button class="card" onclick="play(this)" data-id="04_info_coleccion" data-src="/tutoriales/en/04_info_coleccion.mp4" data-poster="/tutoriales/en/04_info_coleccion.jpg" data-title="Collection info"><img src="/tutoriales/en/04_info_coleccion.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">Collection info</div><div class="d">Tap the collection&#x27;s icon or title: access, edit, empty and delete are there.</div></button></div><h2>3 · Personalise</h2><div class="grid"><button class="card" onclick="play(this)" data-id="06_icono_coleccion" data-src="/tutoriales/en/06_icono_coleccion.mp4" data-poster="/tutoriales/en/06_icono_coleccion.jpg" data-title="Choose the icon or emoji"><img src="/tutoriales/en/06_icono_coleccion.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">Choose the icon or emoji</div><div class="d">Collection info → Edit: change the name and pick an icon, an emoji or an image.</div></button><button class="card" onclick="play(this)" data-id="07_nombre_foto" data-src="/tutoriales/en/07_nombre_foto.mp4" data-poster="/tutoriales/en/07_nombre_foto.jpg" data-title="Your name and photo"><img src="/tutoriales/en/07_nombre_foto.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">Your name and photo</div><div class="d">Settings → tap your name: change it and pick a photo. It is what others see in what you share.</div></button></div><h2>4 · Share</h2><div class="grid"><button class="card" onclick="play(this)" data-id="05_tipo_coleccion" data-src="/tutoriales/en/05_tipo_coleccion.mp4" data-poster="/tutoriales/en/05_tipo_coleccion.jpg" data-title="Change the collection type"><img src="/tutoriales/en/05_tipo_coleccion.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">Change the collection type</div><div class="d">In Collection info, pick the access: Private, View only or View and edit. Then invite with the link or the QR code.</div></button><button class="card" onclick="play(this)" data-id="08_compartir_html" data-src="/tutoriales/en/08_compartir_html.mp4" data-poster="/tutoriales/en/08_compartir_html.jpg" data-title="Share as HTML"><img src="/tutoriales/en/08_compartir_html.jpg" alt="" loading="lazy" width="800" height="500"><div class="t">Share as HTML</div><div class="d">Collection ⋮ menu → Share as HTML. Whoever gets it opens it in the browser, without the app.</div></button></div></main>
+<div class="player" id="player" role="dialog" aria-modal="true">
+  <button type="button" onclick="stop()">Close</button>
+  <div class="box"><video controls playsinline preload="none"></video><div class="cap"></div></div>
+</div>
+<footer>Linkalia &nbsp;·&nbsp; <a href="/en/privacy">Privacy Policy</a></footer>
+<script>
+var p=document.getElementById('player'),v=p.querySelector('video'),c=p.querySelector('.cap');
+function play(b){v.src=b.dataset.src;v.poster=b.dataset.poster;c.textContent=b.dataset.title;p.classList.add('open');v.play();
+  if(window.gtag)gtag('event','tutorial_play',{video:b.dataset.id});}
+function stop(){v.pause();v.removeAttribute('src');v.load();p.classList.remove('open');}
+p.addEventListener('click',function(e){if(e.target===p)stop();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')stop();});
+</script>
+</body>
+</html>

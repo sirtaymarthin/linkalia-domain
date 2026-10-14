@@ -179,6 +179,23 @@
       background: rgba(194, 42, 95, 0.08);
     }
 
+    .tutorials-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.6rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      background: var(--brand);
+      color: var(--paper);
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .tutorials-link:hover { background: #A8204F; }
+
     .download-wrap {
       position: relative;
       margin-top: 3rem;
@@ -397,6 +414,8 @@
     <span class="chip">Collaborative collections</span>
     <span class="chip">HTML export</span>
   </div>
+
+  <a class="tutorials-link" href="/en/tutorials">&#9654;&#xFE0E; Watch video tutorials</a>
 
   <div class="download-wrap">
     <div class="info-tooltip" id="info-tooltip">
