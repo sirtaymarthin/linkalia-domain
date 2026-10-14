@@ -35,7 +35,6 @@
       "applicationCategory": "ProductivityApplication",
       "description": "Linkalia es un organizador y gestor de enlaces y archivos para Android: clasifica por categorías automáticas, crea colecciones colaborativas para compartir y exporta todo a HTML.",
       "url": "https://linkalia.org/",
-      "downloadUrl": "https://github.com/sirtaymarthin/linkalia-domain/releases/latest/download/linkalia.apk",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -195,6 +194,46 @@
     }
 
     .tutorials-link:hover { background: #A8204F; }
+
+    .soon {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1.25rem 1.75rem;
+      max-width: 30rem;
+      text-align: left;
+    }
+
+    .soon svg { flex: none; width: 54px; height: 54px; }
+
+    .soon .label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--paper);
+      background: var(--brand);
+      border-radius: 999px;
+      padding: 0.2rem 0.65rem;
+    }
+
+    .soon .app-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      color: var(--paper);
+      margin-top: 0.4rem;
+    }
+
+    .soon .hint {
+      margin-top: 0.3rem;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: rgba(246, 238, 241, 0.65);
+    }
 
     .download-wrap {
       position: relative;
@@ -418,20 +457,14 @@
   <a class="tutorials-link" href="/tutoriales">&#9654;&#xFE0E; Ver tutoriales en vídeo</a>
 
   <div class="download-wrap">
-    <div class="info-tooltip" id="info-tooltip">
-      <button type="button" onclick="toggleInfo(event)" aria-label="Información">i</button>
-      <div class="panel">
-        El enlace descarga el APK directamente desde GitHub. Android puede avisar de "archivo dañino" o "fuente desconocida" simplemente porque no viene de Google Play — es un aviso genérico del sistema, no un problema real del archivo. Es seguro instalarlo.
+    <div class="soon">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#00D7FE" d="M7.6 4.2 27 23.9 7.7 43.7c-.6-.4-1-1.2-1-2.1V6.3c0-.9.4-1.7.9-2.1z"/><path fill="#FFCE00" d="m33.6 30.5-6.6-6.6 6.6-6.6 7.9 4.5c2.3 1.3 2.3 3.4 0 4.7z"/><path fill="#FF3A44" d="M33.6 30.5 27 23.9 7.7 43.7c.7.7 1.9.8 3.2.1z"/><path fill="#00F076" d="M33.6 17.3 10.9 4.1c-1.3-.7-2.5-.6-3.3.1L27 23.9z"/></svg>
+      <div>
+        <span class="label">Próximamente en Google Play</span>
+        <div class="app-name">Linkalia para Android</div>
+        <div class="hint">Lanzamiento oficial en los próximos días.</div>
       </div>
     </div>
-    <a class="download" href="https://github.com/sirtaymarthin/linkalia-domain/releases/latest/download/linkalia.apk">
-      <img src="/qr-download.png" width="200" height="200" alt="Código QR de descarga de Linkalia para Android" />
-      <div class="download-text">
-        <div class="label">Escanea o pincha para descargar</div>
-        <div class="app-name">Linkalia para Android</div>
-        <div class="hint">Descarga directa (APK)</div>
-      </div>
-    </a>
   </div>
 
   <div class="contact">
@@ -444,21 +477,6 @@
   Linkalia &nbsp;·&nbsp; <a href="/privacidad" style="color:inherit;opacity:0.7;text-decoration:underline;text-underline-offset:3px;">Política de privacidad</a>
 </footer>
 
-<script>
-  function toggleInfo(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    document.getElementById('info-tooltip').classList.toggle('open');
-  }
-
-  document.addEventListener('click', function (e) {
-    const tooltip = document.getElementById('info-tooltip');
-    if (tooltip.classList.contains('open') && !tooltip.contains(e.target)) {
-      tooltip.classList.remove('open');
-    }
-  });
-
-</script>
 
 </body>
 </html>
