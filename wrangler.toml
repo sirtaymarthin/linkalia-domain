@@ -1,8 +1,12 @@
 name = "linkalia-domain"
 compatibility_date = "2026-01-01"
+main = "src/index.js"
 
 [assets]
 directory = "./public"
+binding = "ASSETS"
+# Solo los vídeos tutoriales pasan por el Worker (respuestas parciales para Safari).
+run_worker_first = ["/tutoriales/*"]
 
 routes = [
     { pattern = "linkalia.org", custom_domain = true },
