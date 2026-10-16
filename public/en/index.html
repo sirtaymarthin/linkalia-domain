@@ -209,6 +209,9 @@
 
     .soon svg { flex: none; width: 54px; height: 54px; }
 
+    a.soon { text-decoration: none; transition: border-color 0.2s, transform 0.2s; }
+    a.soon:hover { border-color: var(--brand); transform: translateY(-2px); }
+
     .soon .label {
       display: inline-block;
       font-size: 0.78rem;
@@ -478,5 +481,20 @@
 </footer>
 
 
+<script>
+  // Cuando la app sale a producción en Google Play, el aviso de «próximamente»
+  // pasa a ser el botón de descarga solo (lo dice /play-status, ver src/index.js).
+  fetch('/play-status').then(r => r.ok ? r.json() : null).then(s => {
+    const box = document.querySelector('.soon');
+    if (!s || !s.available || !box) return;
+    const a = document.createElement('a');
+    a.className = 'soon';
+    a.href = s.url;
+    a.innerHTML = box.innerHTML;
+    a.querySelector('.label').textContent = 'Get it on Google Play';
+    a.querySelector('.hint').textContent = 'Free download.';
+    box.replaceWith(a);
+  }).catch(() => {});
+</script>
 </body>
 </html>

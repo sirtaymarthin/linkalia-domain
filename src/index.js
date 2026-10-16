@@ -1,10 +1,39 @@
-// Solo pasa por aquí /tutoriales/* (ver run_worker_first en wrangler.toml); el
-// resto de la web se sirve directamente como ficheros estáticos.
+// Solo pasan por aquí /tutoriales/* y /play-status (ver run_worker_first en
+// wrangler.toml); el resto de la web se sirve directamente como ficheros
+// estáticos.
 // Los ficheros estáticos no responden a «Range» y Safari (iPhone, Mac) no
 // reproduce un vídeo si no recibe 206: se recorta aquí. Los vídeos pesan
 // menos de 1 MB, así que basta con leerlos enteros.
+const PLAY_URL = "https://play.google.com/store/apps/details?id=com.linkalia";
+
+// GET /play-status → {"available": true|false}. La portada lo consulta para
+// cambiar «Próximamente en Google Play» por el botón de descarga en cuanto la
+// app salga a producción, sin tocar la web: mientras no es pública, Play
+// responde 404 a su ficha. Se guarda en caché (1 h si ya está, 15 min si no)
+// para no preguntar a Play en cada visita.
+async function playStatus(request, ctx) {
+  const cache = caches.default;
+  const key = new Request(new URL("/play-status", request.url).toString());
+  const hit = await cache.match(key);
+  if (hit) return hit;
+  let available = false;
+  try {
+    const res = await fetch(PLAY_URL + "&hl=es", { method: "GET", redirect: "follow" });
+    available = res.status === 200;
+  } catch { /* Play no contesta: se sigue mostrando «Próximamente» */ }
+  const res = new Response(JSON.stringify({ available, url: PLAY_URL }), {
+    headers: {
+      "Content-Type": "application/json",
+      "Cache-Control": `public, max-age=${available ? 3600 : 900}`,
+    },
+  });
+  ctx.waitUntil(cache.put(key, res.clone()));
+  return res;
+}
+
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
+    if (new URL(request.url).pathname === "/play-status") return playStatus(request, ctx);
     const res = await env.ASSETS.fetch(request);
     const range = request.headers.get("Range");
     const m = range && /^bytes=(\d*)-(\d*)$/.exec(range.trim());
