@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linkalia — Organizador de enlaces y archivos para Android</title>
+  <title>Linkalia — El lugar donde todo encaja</title>
   <meta name="description" content="Linkalia, el organizador de enlaces y archivos para Android: clasifica por categorías, crea colecciones colaborativas y expórtalas a HTML. Descarga gratis.">
   <link rel="canonical" href="https://linkalia.org/">
   <link rel="alternate" hreflang="es" href="https://linkalia.org/">
@@ -17,12 +17,12 @@
   <!-- Open Graph / redes sociales -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://linkalia.org/">
-  <meta property="og:title" content="Linkalia — Organizador de enlaces y archivos para Android">
+  <meta property="og:title" content="Linkalia — El lugar donde todo encaja">
   <meta property="og:description" content="Gestor de enlaces y archivos con categorías automáticas, colecciones colaborativas y exportación a HTML. Descarga gratis para Android.">
   <meta property="og:locale" content="es_ES">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Linkalia — Organizador de enlaces y archivos para Android">
+  <meta name="twitter:title" content="Linkalia — El lugar donde todo encaja">
   <meta name="twitter:description" content="Gestor de enlaces y archivos con categorías automáticas, colecciones colaborativas y exportación a HTML.">
 
   <!-- Datos estructurados para Google (rich results de app) -->
@@ -363,6 +363,69 @@
       color: rgba(246, 238, 241, 0.4);
     }
 
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.6rem;
+      width: 100%;
+      max-width: 68rem;
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+
+    .shot .phone {
+      width: 100%;
+      max-width: 210px;
+      margin: 0 auto;
+      aspect-ratio: 560 / 1187;
+      border-radius: 26px;
+      background: #0B0508;
+      padding: 7px;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(194, 42, 95, 0.12);
+    }
+
+    .shot .phone img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 20px;
+    }
+
+    .shot h3 {
+      margin-top: 1.1rem;
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: var(--paper);
+    }
+
+    .shot p {
+      margin-top: 0.4rem;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(246, 238, 241, 0.65);
+    }
+
+    @media (max-width: 860px) {
+      .shots {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1.2rem;
+        padding: 0 1rem 1rem;
+        margin-left: -6vw;
+        margin-right: -6vw;
+        width: calc(100% + 12vw);
+        max-width: none;
+        scrollbar-width: none;
+      }
+      .shots::-webkit-scrollbar { display: none; }
+      .shot { flex: 0 0 68%; max-width: 260px; scroll-snap-align: center; }
+    }
+
     @media (max-width: 480px) {
       .download { flex-direction: column; text-align: center; }
       .download-text { text-align: center; }
@@ -443,7 +506,7 @@
     </g>
   </svg>
 
-  <h1>Lo que guardas, <span class="accent">por fin</span> en su sitio</h1>
+  <h1>El lugar donde <span class="accent">todo encaja</span></h1>
   <h2 class="subhead">Organizador de enlaces y archivos para Android</h2>
   <p class="lede">
     Linkalia organiza tus enlaces y archivos por categorías, los clasifica solo,
@@ -469,6 +532,29 @@
       </div>
     </div>
   </div>
+
+  <section class="shots" aria-label="Así es Linkalia">
+    <figure class="shot">
+      <div class="phone"><img src="/img/app/es/1.webp" width="560" height="1187" loading="lazy" alt="Captura de Linkalia: Guarda desde cualquier app"></div>
+      <h3>Guarda desde cualquier app</h3>
+      <p>Pulsa Compartir en WhatsApp, YouTube, Chrome o Archivos y elige Linkalia. Reconoce qué es y lo coloca en su categoría.</p>
+    </figure>
+    <figure class="shot">
+      <div class="phone"><img src="/img/app/es/2.webp" width="560" height="1187" loading="lazy" alt="Captura de Linkalia: Todo en orden"></div>
+      <h3>Todo en orden</h3>
+      <p>Enlaces, PDF, fotos y documentos, por categorías. Lo privado se queda en tu móvil y funciona sin conexión.</p>
+    </figure>
+    <figure class="shot">
+      <div class="phone"><img src="/img/app/es/3.webp" width="560" height="1187" loading="lazy" alt="Captura de Linkalia: Tú decides quién la ve"></div>
+      <h3>Tú decides quién la ve</h3>
+      <p>Cada colección es Privada, Canal (los demás solo ven) o Colaborativa (todos editan). Lo cambias cuando quieras.</p>
+    </figure>
+    <figure class="shot">
+      <div class="phone"><img src="/img/app/es/4.webp" width="560" height="1187" loading="lazy" alt="Captura de Linkalia: Invita con un enlace o un QR"></div>
+      <h3>Invita con un enlace o un QR</h3>
+      <p>Envía el enlace o enseña el código QR. Los cambios llegan a todos al momento.</p>
+    </figure>
+  </section>
 
   <div class="contact">
     <p>¿Tienes dudas o quieres más información?</p>
