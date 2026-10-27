@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://linkalia.org/en/">
   <link rel="alternate" hreflang="es" href="https://linkalia.org/">
   <link rel="alternate" hreflang="en" href="https://linkalia.org/en/">
-  <link rel="alternate" hreflang="x-default" href="https://linkalia.org/">
+  <link rel="alternate" hreflang="x-default" href="https://linkalia.org/en/">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -521,8 +521,8 @@
 </svg>
 
 <nav class="lang-switch" aria-label="Idioma / Language">
-  <a href="/" hreflang="es" lang="es">ES</a>
-  <a href="/en/" hreflang="en" lang="en" class="active" aria-current="true">EN</a>
+  <a href="/" hreflang="es" lang="es" data-lang="es">ES</a>
+  <a href="/en/" hreflang="en" lang="en" data-lang="en" class="active" aria-current="true">EN</a>
 </nav>
 
 <main>
@@ -622,6 +622,12 @@
     a.querySelector('.hint').textContent = 'Free download.';
     box.replaceWith(a);
   }).catch(() => {});
+</script>
+<script>
+  // El idioma elegido aquí manda sobre el del navegador (ver home() en src/index.js).
+  document.querySelectorAll('.lang-switch a[data-lang]').forEach(a => a.addEventListener('click', () => {
+    document.cookie = 'lang=' + a.dataset.lang + '; path=/; max-age=31536000; samesite=lax';
+  }));
 </script>
 </body>
 </html>

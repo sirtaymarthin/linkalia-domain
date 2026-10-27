@@ -1,6 +1,6 @@
-// Solo pasan por aquí /tutoriales/* y /play-status (ver run_worker_first en
-// wrangler.toml); el resto de la web se sirve directamente como ficheros
-// estáticos.
+// Solo pasan por aquí la portada (/), /tutoriales/* y /play-status (ver
+// run_worker_first en wrangler.toml); el resto de la web se sirve directamente
+// como ficheros estáticos.
 // Los ficheros estáticos no responden a «Range» y Safari (iPhone, Mac) no
 // reproduce un vídeo si no recibe 206: se recorta aquí. Los vídeos pesan
 // menos de 1 MB, así que basta con leerlos enteros.
@@ -31,9 +31,37 @@ async function playStatus(request, ctx) {
   return res;
 }
 
+// Portada: en inglés salvo que el navegador esté en español. La elección del
+// selector ES/EN (cookie «lang», la pone la propia página) manda sobre el
+// idioma del navegador. A los buscadores no se les redirige, para que indexen
+// las dos versiones (están enlazadas con hreflang).
+const BOTS = /bot|crawl|spider|slurp|facebookexternalhit|whatsapp|telegram|preview/i;
+
+async function home(request, env) {
+  const cookie = /(?:^|;\s*)lang=(es|en)/.exec(request.headers.get("Cookie") || "");
+  const first = (request.headers.get("Accept-Language") || "").split(",")[0].trim().toLowerCase();
+  const isBot = BOTS.test(request.headers.get("User-Agent") || "");
+  const lang = cookie ? cookie[1] : (isBot || first.startsWith("es")) ? "es" : "en";
+  if (lang === "en") {
+    const url = new URL("/en/", request.url);
+    url.search = new URL(request.url).search;
+    return new Response(null, {
+      status: 302,
+      headers: { Location: url.toString(), "Cache-Control": "private, no-store", Vary: "Accept-Language, Cookie" },
+    });
+  }
+  const res = await env.ASSETS.fetch(request);
+  const headers = new Headers(res.headers);
+  headers.set("Cache-Control", "private, no-cache");
+  headers.set("Vary", "Accept-Language, Cookie");
+  return new Response(res.body, { status: res.status, headers });
+}
+
 export default {
   async fetch(request, env, ctx) {
-    if (new URL(request.url).pathname === "/play-status") return playStatus(request, ctx);
+    const path = new URL(request.url).pathname;
+    if (path === "/play-status") return playStatus(request, ctx);
+    if (path === "/" || path === "/index.html") return home(request, env);
     const res = await env.ASSETS.fetch(request);
     const range = request.headers.get("Range");
     const m = range && /^bytes=(\d*)-(\d*)$/.exec(range.trim());
