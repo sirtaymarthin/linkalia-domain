@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linkalia — The place where everything fits</title>
-  <meta name="description" content="Linkalia is a link and file organizer for Android: save links, documents and photos from any app into collections and share them as a Channel, Collaborative or a web page (HTML). Free.">
+  <meta name="description" content="Linkalia is a link and file organizer for Android: save links, documents and photos from any app into collections and share them as a Channel, Collaborative or a web page (HTML). Import your bookmarks. Free.">
+  <meta name="keywords" content="link manager, link organizer, bookmark manager, save links, bookmarks, favorites, import bookmarks, save YouTube videos, save Instagram posts, save from WhatsApp, organize PDFs and documents, shared collections, shared lists, reading list, Pocket alternative, Android app, Linkalia">
   <link rel="canonical" href="https://linkalia.org/en/">
   <link rel="alternate" hreflang="es" href="https://linkalia.org/">
   <link rel="alternate" hreflang="en" href="https://linkalia.org/en/">
@@ -39,7 +40,16 @@
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "EUR"
-      }
+      },
+      "featureList": [
+        "Save from any app",
+        "Import your bookmarks",
+        "Collections and categories",
+        "Share as a Channel or Collaborative",
+        "Export as a web page (HTML)",
+        "Private and offline"
+      ],
+      "inLanguage": "en"
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -462,6 +472,49 @@
       .shot { flex: 0 0 68%; max-width: 260px; scroll-snap-align: center; }
     }
 
+    .features {
+      width: 100%;
+      max-width: 68rem;
+      margin-top: 4rem;
+      text-align: left;
+    }
+
+    .features h2 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+      text-align: center;
+      color: var(--paper);
+    }
+
+    .features .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: 1rem;
+      margin-top: 1.8rem;
+    }
+
+    .feature {
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.2rem 1.3rem;
+    }
+
+    .feature h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: 1.12rem;
+      color: var(--brand-light);
+    }
+
+    .feature p {
+      margin-top: 0.45rem;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: rgba(246, 238, 241, 0.72);
+    }
+
     @media (max-width: 480px) {
       .download { flex-direction: column; text-align: center; }
       .download-text { text-align: center; }
@@ -557,6 +610,7 @@
     <span class="chip">Save from any app</span>
     <span class="chip">Links, documents and photos</span>
     <span class="chip">Share as a Channel or Collaborative</span>
+    <span class="chip">Import your bookmarks</span>
     <span class="chip">Export as a web page (HTML)</span>
     <span class="chip">Private stays on your phone</span>
   </div>
@@ -595,6 +649,36 @@
       <h3>Invite with a link or a QR code</h3>
       <p>Send the link or show the QR code. Changes reach everyone straight away.</p>
     </figure>
+  </section>
+
+  <section class="features">
+    <h2>Everything you save, in one place</h2>
+    <div class="grid">
+      <article class="feature">
+        <h3>Save from any app</h3>
+        <p>Share links from YouTube, Instagram, TikTok, WhatsApp or Chrome to Linkalia, plus photos, PDFs and documents. It recognises what each one is and files it in the right category.</p>
+      </article>
+      <article class="feature">
+        <h3>Import your bookmarks</h3>
+        <p>Create a collection from your Chrome, Edge, Firefox or Safari bookmarks (favorites): each folder becomes a category.</p>
+      </article>
+      <article class="feature">
+        <h3>Collections and categories</h3>
+        <p>Organize links and files into collections with their own icon or emoji, each split into categories: recipes, trips, courses, reading lists…</p>
+      </article>
+      <article class="feature">
+        <h3>Share as a Channel or Collaborative</h3>
+        <p>Invite with a link or a QR code. In a Channel others can only view; in a Collaborative collection everyone adds and edits, and changes arrive instantly.</p>
+      </article>
+      <article class="feature">
+        <h3>Export as a web page (HTML)</h3>
+        <p>Turn a collection into a web page that opens in any browser, nothing to install.</p>
+      </article>
+      <article class="feature">
+        <h3>Private and offline</h3>
+        <p>What's private stays on your phone and works without internet. Save a backup whenever you like.</p>
+      </article>
+    </div>
   </section>
 
   <div class="contact">
