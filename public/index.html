@@ -140,6 +140,20 @@
       color: var(--paper);
     }
 
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(0.8rem, 2vw, 1.3rem);
+    }
+
+    .brand-row .app-icon {
+      width: clamp(52px, 8vw, 80px);
+      height: clamp(52px, 8vw, 80px);
+      margin-bottom: 0;
+      flex: none;
+    }
+
     h1.brand {
       font-size: clamp(3rem, 9vw, 5.2rem);
       line-height: 1;
@@ -512,6 +526,7 @@
 </nav>
 
 <main>
+  <div class="brand-row">
   <svg class="app-icon" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
     <circle cx="54" cy="54" r="54" fill="#C22A5F" />
     <g transform="translate(18,18) scale(0.035156)">
@@ -529,6 +544,7 @@
   </svg>
 
   <h1 class="brand">Linkalia</h1>
+  </div>
   <p class="slogan">El lugar donde <span class="accent">todo encaja</span></p>
   <h2 class="subhead after-slogan">Organizador de enlaces y archivos para Android</h2>
   <p class="lede">
