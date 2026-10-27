@@ -140,6 +140,28 @@
       color: var(--paper);
     }
 
+    h1.brand {
+      font-size: clamp(3rem, 9vw, 5.2rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+
+    p.slogan {
+      margin-top: 0.7rem;
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3.6vw, 2.3rem);
+      line-height: 1.15;
+      color: var(--paper);
+    }
+
+    p.slogan .accent {
+      color: var(--brand-light);
+      font-style: italic;
+    }
+
+    h2.subhead.after-slogan { margin-top: 1rem; }
+
     h1 .accent {
       color: var(--brand-light);
       font-style: italic;
@@ -506,8 +528,9 @@
     </g>
   </svg>
 
-  <h1>The place where <span class="accent">everything fits</span></h1>
-  <h2 class="subhead">Link and File Organizer for Android</h2>
+  <h1 class="brand">Linkalia</h1>
+  <p class="slogan">The place where <span class="accent">everything fits</span></p>
+  <h2 class="subhead after-slogan">Link and File Organizer for Android</h2>
   <p class="lede">
     Linkalia organizes your links and files into categories, sorts them on its own,
     and lets you share whole collections with anyone. A personal library that never

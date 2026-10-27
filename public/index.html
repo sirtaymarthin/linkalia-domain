@@ -140,6 +140,28 @@
       color: var(--paper);
     }
 
+    h1.brand {
+      font-size: clamp(3rem, 9vw, 5.2rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+
+    p.slogan {
+      margin-top: 0.7rem;
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3.6vw, 2.3rem);
+      line-height: 1.15;
+      color: var(--paper);
+    }
+
+    p.slogan .accent {
+      color: var(--brand-light);
+      font-style: italic;
+    }
+
+    h2.subhead.after-slogan { margin-top: 1rem; }
+
     h1 .accent {
       color: var(--brand-light);
       font-style: italic;
@@ -506,8 +528,9 @@
     </g>
   </svg>
 
-  <h1>El lugar donde <span class="accent">todo encaja</span></h1>
-  <h2 class="subhead">Organizador de enlaces y archivos para Android</h2>
+  <h1 class="brand">Linkalia</h1>
+  <p class="slogan">El lugar donde <span class="accent">todo encaja</span></p>
+  <h2 class="subhead after-slogan">Organizador de enlaces y archivos para Android</h2>
   <p class="lede">
     Linkalia organiza tus enlaces y archivos por categorías, los clasifica solo,
     y te deja compartir colecciones enteras con quien quieras. Una librería personal
