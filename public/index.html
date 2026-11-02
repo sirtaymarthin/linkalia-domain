@@ -284,6 +284,26 @@
       color: rgba(246, 238, 241, 0.65);
     }
 
+    .play-qr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: rgba(246, 238, 241, 0.65);
+    }
+
+    .play-qr img { display: block; width: 124px; height: 124px; border-radius: 8px; }
+
+    .play-row { display: flex; align-items: stretch; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+    /* En el móvil no tiene sentido escanear la propia pantalla: solo el botón. */
+    @media (max-width: 640px) { .play-qr { display: none; } }
+
     .download-wrap {
       position: relative;
       margin-top: 3rem;
@@ -618,12 +638,18 @@
   <a class="tutorials-link" href="/tutoriales">&#9654;&#xFE0E; Ver tutoriales en vídeo</a>
 
   <div class="download-wrap">
-    <div class="soon">
+    <div class="play-row">
+      <a class="soon" href="https://play.google.com/store/apps/details?id=com.linkalia" rel="noopener">
       <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#00D7FE" d="M7.6 4.2 27 23.9 7.7 43.7c-.6-.4-1-1.2-1-2.1V6.3c0-.9.4-1.7.9-2.1z"/><path fill="#FFCE00" d="m33.6 30.5-6.6-6.6 6.6-6.6 7.9 4.5c2.3 1.3 2.3 3.4 0 4.7z"/><path fill="#FF3A44" d="M33.6 30.5 27 23.9 7.7 43.7c.7.7 1.9.8 3.2.1z"/><path fill="#00F076" d="M33.6 17.3 10.9 4.1c-1.3-.7-2.5-.6-3.3.1L27 23.9z"/></svg>
-      <div>
-        <span class="label">Próximamente en Google Play</span>
-        <div class="app-name">Linkalia para Android</div>
-        <div class="hint">Lanzamiento oficial en los próximos días.</div>
+        <div>
+          <span class="label">Disponible en Google Play</span>
+          <div class="app-name">Linkalia para Android</div>
+          <div class="hint">Descárgala gratis.</div>
+        </div>
+      </a>
+      <div class="play-qr">
+        <img src="/img/google-play-qr.svg" width="124" height="124" alt="Código QR de Linkalia en Google Play">
+        <span>Escanéalo con el móvil</span>
       </div>
     </div>
   </div>
@@ -692,21 +718,6 @@
 </footer>
 
 
-<script>
-  // Cuando la app sale a producción en Google Play, el aviso de «próximamente»
-  // pasa a ser el botón de descarga solo (lo dice /play-status, ver src/index.js).
-  fetch('/play-status').then(r => r.ok ? r.json() : null).then(s => {
-    const box = document.querySelector('.soon');
-    if (!s || !s.available || !box) return;
-    const a = document.createElement('a');
-    a.className = 'soon';
-    a.href = s.url;
-    a.innerHTML = box.innerHTML;
-    a.querySelector('.label').textContent = 'Disponible en Google Play';
-    a.querySelector('.hint').textContent = 'Descárgala gratis.';
-    box.replaceWith(a);
-  }).catch(() => {});
-</script>
 <script>
   // El idioma elegido aquí manda sobre el del navegador (ver home() en src/index.js).
   document.querySelectorAll('.lang-switch a[data-lang]').forEach(a => a.addEventListener('click', () => {
