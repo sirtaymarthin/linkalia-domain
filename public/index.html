@@ -429,6 +429,39 @@
       color: rgba(246, 238, 241, 0.4);
     }
 
+    .promo {
+      margin: 48px auto 8px;
+      max-width: 960px;
+      text-align: center;
+    }
+    .promo h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--paper);
+      opacity: 0.85;
+      margin: 0 0 14px;
+    }
+    .promo video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin: 0 auto;
+      border-radius: 18px;
+      background: #000;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+    @media (max-width: 640px) {
+      .promo video {
+        aspect-ratio: 9 / 16;
+        width: auto;
+        max-width: 100%;
+        height: min(80vh, 680px);
+      }
+    }
+
     .shots {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -653,6 +686,22 @@
       </div>
     </div>
   </div>
+
+  <section class="promo" aria-label="Vídeo de presentación de Linkalia">
+    <h2>Linkalia en 40 segundos</h2>
+    <video id="promo-video" controls playsinline preload="none" poster="/video/promo_es.webp"
+           data-poster-vertical="/video/promo_es_vertical.webp">
+      <source src="/video/promo_es_vertical.mp4" type="video/mp4" media="(max-width: 640px)">
+      <source src="/video/promo_es.mp4" type="video/mp4">
+      Tu navegador no puede reproducir este vídeo.
+    </video>
+    <script>
+      (function () {
+        var v = document.getElementById("promo-video");
+        if (window.matchMedia && matchMedia("(max-width: 640px)").matches) v.poster = v.dataset.posterVertical;
+      })();
+    </script>
+  </section>
 
   <section class="shots" aria-label="Así es Linkalia">
     <figure class="shot">
