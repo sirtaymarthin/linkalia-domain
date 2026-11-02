@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linkalia — The place where everything fits</title>
+  <title>Linkalia: Link and File Organizer for Android</title>
   <meta name="description" content="Linkalia is a link and file organizer for Android: save links, documents and photos from any app into collections and share them as a Channel, Collaborative or a web page (HTML). Import your bookmarks. Free.">
   <meta name="keywords" content="link manager, link organizer, bookmark manager, save links, bookmarks, favorites, import bookmarks, save YouTube videos, save Instagram posts, save from WhatsApp, organize PDFs and documents, shared collections, shared lists, reading list, Pocket alternative, Android app, Linkalia">
   <link rel="canonical" href="https://linkalia.org/en/">
   <link rel="alternate" hreflang="es" href="https://linkalia.org/">
   <link rel="alternate" hreflang="en" href="https://linkalia.org/en/">
-  <link rel="alternate" hreflang="x-default" href="https://linkalia.org/en/">
+  <link rel="alternate" hreflang="x-default" href="https://linkalia.org/">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -18,7 +18,7 @@
   <!-- Open Graph / redes sociales -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://linkalia.org/en/">
-  <meta property="og:title" content="Linkalia — The place where everything fits">
+  <meta property="og:title" content="Linkalia: Link and File Organizer for Android">
   <meta property="og:description" content="The place where everything fits: save links, documents and photos from any app and share them with anyone. Free for Android.">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="es_ES">
@@ -30,7 +30,7 @@
   <meta property="og:image:alt" content="Linkalia: the place where everything fits. Link and file organizer for Android">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://linkalia.org/img/og-en.jpg">
-  <meta name="twitter:title" content="Linkalia — The place where everything fits">
+  <meta name="twitter:title" content="Linkalia: Link and File Organizer for Android">
   <meta name="twitter:description" content="The place where everything fits: save links, documents and photos from any app and share them with anyone.">
 
   <!-- Datos estructurados para Google (rich results de app) -->
@@ -148,7 +148,7 @@
       filter: drop-shadow(0 8px 24px rgba(194, 42, 95, 0.35));
     }
 
-    h1 {
+    h1, p.brand {
       font-family: 'Fraunces', serif;
       font-weight: 500;
       font-size: clamp(2.2rem, 6vw, 4rem);
@@ -171,7 +171,7 @@
       flex: none;
     }
 
-    h1.brand {
+    p.brand {
       font-size: clamp(3rem, 9vw, 5.2rem);
       line-height: 1;
       letter-spacing: -0.01em;
@@ -191,14 +191,17 @@
       font-style: italic;
     }
 
-    h2.subhead.after-slogan { margin-top: 1rem; }
+    .subhead.after-slogan { margin-top: 1rem; }
 
     h1 .accent {
       color: var(--brand-light);
       font-style: italic;
     }
 
-    h2.subhead {
+    .subhead {
+      font-family: inherit;
+      line-height: 1.4;
+      max-width: none;
       margin-top: 0.6rem;
       font-size: 1rem;
       font-weight: 500;
@@ -700,10 +703,10 @@
       </g>
     </svg>
 
-    <h1 class="brand">Linkalia</h1>
+    <p class="brand">Linkalia</p>
     </div>
     <p class="slogan">The place where <span class="accent">everything fits</span></p>
-    <h2 class="subhead after-slogan">Link and File Organizer for Android</h2>
+    <h1 class="subhead after-slogan">Link and File Organizer for Android</h1>
     <div class="download-wrap">
       <div class="play-row">
         <a class="soon" href="https://play.google.com/store/apps/details?id=com.linkalia" rel="noopener">
@@ -798,7 +801,7 @@
 </main>
 
 <footer>
-  Linkalia &nbsp;·&nbsp; <a href="/en/privacy" style="color:inherit;opacity:0.7;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a>
+  Linkalia &nbsp;·&nbsp; <a href="/en/link-saver-apps" style="color:inherit;opacity:0.7;text-decoration:underline;text-underline-offset:3px;">Apps to save links</a> &nbsp;·&nbsp; <a href="/en/privacy" style="color:inherit;opacity:0.7;text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a>
 </footer>
 
 

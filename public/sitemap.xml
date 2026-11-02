@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://linkalia.org/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-11-02</lastmod>
   </url>
   <url>
     <loc>https://linkalia.org/en/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-11-02</lastmod>
   </url>
   <url>
     <loc>https://linkalia.org/tutoriales</loc>
@@ -15,5 +15,13 @@
   <url>
     <loc>https://linkalia.org/en/tutorials</loc>
     <lastmod>2026-10-14</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/apps-guardar-enlaces</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/link-saver-apps</loc>
+    <lastmod>2026-11-02</lastmod>
   </url>
 </urlset>

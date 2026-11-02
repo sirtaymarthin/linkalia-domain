@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linkalia — El lugar donde todo encaja</title>
+  <title>Linkalia: organizador de enlaces y archivos para Android</title>
   <meta name="description" content="Linkalia, el organizador de enlaces y archivos para Android: guarda desde cualquier app enlaces, documentos y fotos en colecciones y compártelas como Canal, Colaborativa o página web (HTML). Importa tus marcadores. Gratis.">
   <meta name="keywords" content="gestor de enlaces, organizador de enlaces, guardar enlaces, marcadores, favoritos, importar marcadores, gestor de marcadores, guardar vídeos de YouTube, guardar Instagram, guardar desde WhatsApp, organizar PDF y documentos, colecciones compartidas, listas compartidas, lista de lectura, alternativa a Pocket, app Android, Linkalia">
   <link rel="canonical" href="https://linkalia.org/">
   <link rel="alternate" hreflang="es" href="https://linkalia.org/">
   <link rel="alternate" hreflang="en" href="https://linkalia.org/en/">
-  <link rel="alternate" hreflang="x-default" href="https://linkalia.org/en/">
+  <link rel="alternate" hreflang="x-default" href="https://linkalia.org/">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -18,7 +18,7 @@
   <!-- Open Graph / redes sociales -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://linkalia.org/">
-  <meta property="og:title" content="Linkalia — El lugar donde todo encaja">
+  <meta property="og:title" content="Linkalia: organizador de enlaces y archivos para Android">
   <meta property="og:description" content="El lugar donde todo encaja: guarda enlaces, documentos y fotos desde cualquier app y compártelos con quien quieras. Gratis para Android.">
   <meta property="og:locale" content="es_ES">
   <meta property="og:locale:alternate" content="en_US">
@@ -30,7 +30,7 @@
   <meta property="og:image:alt" content="Linkalia: el lugar donde todo encaja. Organizador de enlaces y archivos para Android">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://linkalia.org/img/og-es.jpg">
-  <meta name="twitter:title" content="Linkalia — El lugar donde todo encaja">
+  <meta name="twitter:title" content="Linkalia: organizador de enlaces y archivos para Android">
   <meta name="twitter:description" content="El lugar donde todo encaja: guarda enlaces, documentos y fotos desde cualquier app y compártelos con quien quieras.">
 
   <!-- Datos estructurados para Google (rich results de app) -->
@@ -148,7 +148,7 @@
       filter: drop-shadow(0 8px 24px rgba(194, 42, 95, 0.35));
     }
 
-    h1 {
+    h1, p.brand {
       font-family: 'Fraunces', serif;
       font-weight: 500;
       font-size: clamp(2.2rem, 6vw, 4rem);
@@ -171,7 +171,7 @@
       flex: none;
     }
 
-    h1.brand {
+    p.brand {
       font-size: clamp(3rem, 9vw, 5.2rem);
       line-height: 1;
       letter-spacing: -0.01em;
@@ -191,14 +191,17 @@
       font-style: italic;
     }
 
-    h2.subhead.after-slogan { margin-top: 1rem; }
+    .subhead.after-slogan { margin-top: 1rem; }
 
     h1 .accent {
       color: var(--brand-light);
       font-style: italic;
     }
 
-    h2.subhead {
+    .subhead {
+      font-family: inherit;
+      line-height: 1.4;
+      max-width: none;
       margin-top: 0.6rem;
       font-size: 1rem;
       font-weight: 500;
@@ -700,10 +703,10 @@
       </g>
     </svg>
 
-    <h1 class="brand">Linkalia</h1>
+    <p class="brand">Linkalia</p>
     </div>
     <p class="slogan">El lugar donde <span class="accent">todo encaja</span></p>
-    <h2 class="subhead after-slogan">Organizador de enlaces y archivos para Android</h2>
+    <h1 class="subhead after-slogan">Organizador de enlaces y archivos para Android</h1>
     <div class="download-wrap">
       <div class="play-row">
         <a class="soon" href="https://play.google.com/store/apps/details?id=com.linkalia" rel="noopener">
@@ -798,7 +801,7 @@
 </main>
 
 <footer>
-  Linkalia &nbsp;·&nbsp; <a href="/privacidad" style="color:inherit;opacity:0.7;text-decoration:underline;text-underline-offset:3px;">Política de privacidad</a>
+  Linkalia &nbsp;·&nbsp; <a href="/apps-guardar-enlaces" style="color:inherit;opacity:0.7;text-decoration:underline;text-underline-offset:3px;">Apps para guardar enlaces</a> &nbsp;·&nbsp; <a href="/privacidad" style="color:inherit;opacity:0.7;text-decoration:underline;text-underline-offset:3px;">Política de privacidad</a>
 </footer>
 
 
