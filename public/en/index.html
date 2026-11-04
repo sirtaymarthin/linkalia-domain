@@ -516,7 +516,7 @@
 
     .shots {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 1.6rem;
       width: 100%;
       max-width: 68rem;
@@ -543,6 +543,31 @@
       object-fit: cover;
       object-position: top;
       border-radius: 20px;
+    }
+
+    /* Primera entrada del carrusel: el reel corto, en bucle y sin sonido hasta que se toca. */
+    .shot .phone.reel { position: relative; }
+    .shot .phone.reel video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #0B0508;
+      border-radius: 20px;
+    }
+    .reel-sound {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(246, 238, 241, 0.3);
+      background: rgba(21, 11, 16, 0.75);
+      color: var(--paper);
+      font-size: 1rem;
+      line-height: 1;
+      cursor: pointer;
     }
 
     .shot h3 {
@@ -743,6 +768,14 @@
 
   <section class="shots" aria-label="A look at Linkalia">
     <figure class="shot">
+      <div class="phone reel">
+        <video id="reel-video" src="/video/reel_en.mp4" poster="/video/reel_en.webp" muted loop playsinline preload="none" aria-label="Short Linkalia video: save from WhatsApp and share with a QR code"></video>
+        <button class="reel-sound" type="button" aria-label="Turn sound on" data-on="Turn sound on" data-off="Turn sound off">&#128263;&#xFE0E;</button>
+      </div>
+      <h3>Linkalia in 14 seconds</h3>
+      <p>From the chat where everything gets lost to having it saved and shared with anyone.</p>
+    </figure>
+    <figure class="shot">
       <div class="phone"><img src="/img/app/en/1.webp" width="560" height="1187" loading="lazy" alt="Linkalia screenshot: Save from any app"></div>
       <h3>Save from any app</h3>
       <p>Tap Share in WhatsApp, YouTube, Chrome or Files and choose Linkalia. It recognises what it is and files it in the right category.</p>
@@ -816,6 +849,25 @@
   document.querySelectorAll('.lang-switch a[data-lang]').forEach(a => a.addEventListener('click', () => {
     document.cookie = 'lang=' + a.dataset.lang + '; path=/; max-age=31536000; samesite=lax';
   }));
+</script>
+<script>
+// Reel del carrusel: se reproduce (sin sonido) solo cuando está a la vista.
+(function () {
+  var v = document.getElementById('reel-video');
+  if (!v) return;
+  var b = v.parentNode.querySelector('.reel-sound');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { v.play().catch(function () {}); } else { v.pause(); } });
+    }, { threshold: 0.4 }).observe(v);
+  } else { v.preload = 'auto'; v.autoplay = true; }
+  b.addEventListener('click', function () {
+    v.muted = !v.muted;
+    if (!v.muted) { v.currentTime = 0; v.play().catch(function () {}); }
+    b.innerHTML = v.muted ? '&#128263;&#xFE0E;' : '&#128266;&#xFE0E;';
+    b.setAttribute('aria-label', v.muted ? b.dataset.on : b.dataset.off);
+  });
+})();
 </script>
 </body>
 </html>
