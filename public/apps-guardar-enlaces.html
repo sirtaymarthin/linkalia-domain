@@ -84,14 +84,20 @@ table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem}
 th,td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--ink-2);font-weight:600;color:var(--paper)}
 tr:last-child td{border-bottom:0}
+.play-top{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem;padding:.8rem 1rem;background:var(--ink-2);border:1px solid var(--line);border-radius:14px;font-size:.92rem;color:rgba(246,238,241,.82)}
+.play-top a{flex:none;background:var(--brand);color:var(--paper);text-decoration:none;font-weight:600;border-radius:999px;padding:.5rem 1rem;font-size:.88rem}
 .cta{margin-top:2.6rem;padding:1.4rem;background:var(--ink-2);border:1px solid var(--line);border-radius:18px;text-align:center}
 .cta p{margin-top:0}
 .cta a.btn{display:inline-block;margin-top:1rem;background:var(--brand);color:var(--paper);text-decoration:none;font-weight:600;border-radius:999px;padding:.75rem 1.4rem}
+.related{margin-top:2.6rem}
+.related ul{list-style:none;padding:0}
+.related li{margin-top:.5rem}
 footer{text-align:center;padding:1.5rem 1rem 2rem;font-size:.82rem;color:rgba(246,238,241,.4)}
 footer a{color:inherit;opacity:.7}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EYV2RXZZ9"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9EYV2RXZZ9');</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-play]');if(a)gtag('event','play_click',{article:a.getAttribute('data-play'),place:a.getAttribute('data-place')});});</script>
 </head>
 <body>
 <a class="back" href="/">← Inicio</a>
@@ -103,6 +109,8 @@ footer a{color:inherit;opacity:.7}
   <h1>Apps para guardar enlaces en Android (y alternativas a Pocket)</h1>
   <p class="meta">Actualizado el 2 de noviembre de 2026 · Escrito por el equipo de Linkalia</p>
   <p class="lede">Guardas un post de Instagram, un vídeo de YouTube o un PDF que te mandan por WhatsApp… y cuando lo necesitas no hay forma de encontrarlo. Si te pasa, no es falta de orden: es que cada cosa se queda en una app distinta. Aquí repasamos las apps de Android que resuelven eso y en qué se diferencian.</p>
+  <div class="play-top"><span><strong>Linkalia</strong> · Gratis para Android, sin registro y sin anuncios</span><a href="https://play.google.com/store/apps/details?id=com.linkalia&amp;referrer=utm_source%3Dlinkalia.org%26utm_medium%3Darticle%26utm_campaign%3Dlink_saver_apps" rel="noopener" data-play="link_saver_apps" data-place="top">Abrir en Google Play</a></div>
+
 
   <h2>Por qué se pierden los enlaces guardados</h2>
   <p>Casi todas las apps tienen su propio botón de «guardar»: los guardados de Instagram, «Ver más tarde» en YouTube, los mensajes destacados de WhatsApp, los marcadores de Chrome. El problema es que cada lista vive dentro de su app, no se pueden ordenar por temas y, si la app cambia o cierra, te quedas sin ellos.</p>
@@ -168,9 +176,21 @@ footer a{color:inherit;opacity:.7}
 
   <div class="cta">
     <p><strong>Prueba Linkalia gratis.</strong> Guarda tus enlaces y documentos en un solo sitio y encuéntralos cuando los necesites.</p>
-    <a class="btn" href="https://play.google.com/store/apps/details?id=com.linkalia" rel="noopener">Descargar en Google Play</a>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.linkalia&amp;referrer=utm_source%3Dlinkalia.org%26utm_medium%3Darticle%26utm_campaign%3Dlink_saver_apps" rel="noopener" data-play="link_saver_apps" data-place="bottom">Descargar en Google Play</a>
   </div>
+  <nav class="related" aria-label="Más guías">
+    <h2>Más guías</h2>
+    <ul>
+      <li><a href="/guardar-enlaces-whatsapp">Guardar enlaces y PDF de WhatsApp sin que se pierdan</a></li>
+      <li><a href="/organizar-guardados-instagram-tiktok-youtube">Tus guardados de Instagram, TikTok y YouTube, en un solo sitio</a></li>
+      <li><a href="/guardar-recetas-instagram-tiktok">Guardar recetas de Instagram y TikTok y encontrarlas al cocinar</a></li>
+      <li><a href="/organizar-viaje-en-grupo">Organizar un viaje en grupo sin perder reservas ni billetes</a></li>
+      <li><a href="/compartir-material-alumnos-clientes">Compartir material con alumnos o clientes sin que se pierda</a></li>
+      <li><a href="/pasar-marcadores-chrome-al-movil">Pasar tus marcadores de Chrome al móvil, ordenados</a></li>
+      <li><a href="/guardar-documentos-importantes-movil">Documentos importantes en el móvil, ordenados y sin conexión</a></li>
+    </ul>
+  </nav>
 </article>
-<footer>Linkalia &nbsp;·&nbsp; <a href="/">Inicio</a> &nbsp;·&nbsp; <a href="/tutoriales">Tutoriales</a> &nbsp;·&nbsp; <a href="/privacidad">Política de privacidad</a></footer>
+<footer>Linkalia &nbsp;·&nbsp; <a href="/">Inicio</a> &nbsp;·&nbsp; <a href="/guias">Guías</a> &nbsp;·&nbsp; <a href="/tutoriales">Tutoriales</a> &nbsp;·&nbsp; <a href="/privacidad">Política de privacidad</a></footer>
 </body>
 </html>

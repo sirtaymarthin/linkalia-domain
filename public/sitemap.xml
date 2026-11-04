@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://linkalia.org/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://linkalia.org/en/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://linkalia.org/tutoriales</loc>
@@ -17,11 +17,139 @@
     <lastmod>2026-10-14</lastmod>
   </url>
   <url>
+    <loc>https://linkalia.org/guias</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/guides</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
     <loc>https://linkalia.org/apps-guardar-enlaces</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://linkalia.org/en/link-saver-apps</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/guardar-enlaces-whatsapp</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/save-whatsapp-links</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/organizar-guardados-instagram-tiktok-youtube</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/organize-instagram-tiktok-youtube-saves</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/guardar-recetas-instagram-tiktok</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/save-recipes-instagram-tiktok</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/organizar-viaje-en-grupo</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/plan-group-trip</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/compartir-material-alumnos-clientes</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/share-material-students-clients</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/pasar-marcadores-chrome-al-movil</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/chrome-bookmarks-to-android</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/guardar-documentos-importantes-movil</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/store-important-documents-phone</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/compartir-temario-oposiciones</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/share-exam-prep-material</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/compartir-apuntes-trabajos-en-grupo</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/share-class-notes-group-projects</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/comunidad-de-vecinos-compartir-documentos</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/residents-association-share-documents</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/autoescuela-compartir-material-alumnos</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/driving-school-share-material</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/club-deportivo-compartir-planes-rutas</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/sports-club-share-plans-routes</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/academia-curso-compartir-material</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/course-share-material</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/inmobiliaria-compartir-pisos-clientes</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/estate-agent-share-properties</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/ampa-familias-colegio-compartir-informacion</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://linkalia.org/en/school-parents-share-information</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
 </urlset>

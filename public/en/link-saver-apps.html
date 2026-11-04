@@ -84,14 +84,20 @@ table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem}
 th,td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--ink-2);font-weight:600;color:var(--paper)}
 tr:last-child td{border-bottom:0}
+.play-top{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem;padding:.8rem 1rem;background:var(--ink-2);border:1px solid var(--line);border-radius:14px;font-size:.92rem;color:rgba(246,238,241,.82)}
+.play-top a{flex:none;background:var(--brand);color:var(--paper);text-decoration:none;font-weight:600;border-radius:999px;padding:.5rem 1rem;font-size:.88rem}
 .cta{margin-top:2.6rem;padding:1.4rem;background:var(--ink-2);border:1px solid var(--line);border-radius:18px;text-align:center}
 .cta p{margin-top:0}
 .cta a.btn{display:inline-block;margin-top:1rem;background:var(--brand);color:var(--paper);text-decoration:none;font-weight:600;border-radius:999px;padding:.75rem 1.4rem}
+.related{margin-top:2.6rem}
+.related ul{list-style:none;padding:0}
+.related li{margin-top:.5rem}
 footer{text-align:center;padding:1.5rem 1rem 2rem;font-size:.82rem;color:rgba(246,238,241,.4)}
 footer a{color:inherit;opacity:.7}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EYV2RXZZ9"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9EYV2RXZZ9');</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-play]');if(a)gtag('event','play_click',{article:a.getAttribute('data-play'),place:a.getAttribute('data-place')});});</script>
 </head>
 <body>
 <a class="back" href="/en/">← Home</a>
@@ -103,6 +109,8 @@ footer a{color:inherit;opacity:.7}
   <h1>Best Apps to Save Links on Android (and Pocket Alternatives)</h1>
   <p class="meta">Updated November 2, 2026 · Written by the Linkalia team</p>
   <p class="lede">You save an Instagram post, a YouTube video or a PDF someone sent you on WhatsApp… and when you need it, it's nowhere to be found. If that sounds familiar, it isn't a lack of discipline: everything just ends up in a different app. Here are the Android apps that fix that, and how they differ.</p>
+  <div class="play-top"><span><strong>Linkalia</strong> · Free for Android, no sign-up and no ads</span><a href="https://play.google.com/store/apps/details?id=com.linkalia&amp;referrer=utm_source%3Dlinkalia.org%26utm_medium%3Darticle%26utm_campaign%3Dlink_saver_apps" rel="noopener" data-play="link_saver_apps" data-place="top">Open in Google Play</a></div>
+
 
   <h2>Why saved links get lost</h2>
   <p>Almost every app has its own "save" button: Instagram's saved posts, YouTube's Watch Later, WhatsApp's starred messages, Chrome's bookmarks. The trouble is that each list lives inside its own app, you can't sort them by topic, and if the app changes or shuts down, they're gone.</p>
@@ -168,9 +176,21 @@ footer a{color:inherit;opacity:.7}
 
   <div class="cta">
     <p><strong>Try Linkalia for free.</strong> Keep your links and documents in one place and find them when you need them.</p>
-    <a class="btn" href="https://play.google.com/store/apps/details?id=com.linkalia" rel="noopener">Get it on Google Play</a>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.linkalia&amp;referrer=utm_source%3Dlinkalia.org%26utm_medium%3Darticle%26utm_campaign%3Dlink_saver_apps" rel="noopener" data-play="link_saver_apps" data-place="bottom">Get it on Google Play</a>
   </div>
+  <nav class="related" aria-label="More guides">
+    <h2>More guides</h2>
+    <ul>
+      <li><a href="/en/save-whatsapp-links">Save WhatsApp links and PDFs before they get buried</a></li>
+      <li><a href="/en/organize-instagram-tiktok-youtube-saves">Your Instagram, TikTok and YouTube saves, in one place</a></li>
+      <li><a href="/en/save-recipes-instagram-tiktok">Save recipes from Instagram and TikTok and find them when you cook</a></li>
+      <li><a href="/en/plan-group-trip">Plan a group trip without losing bookings or tickets</a></li>
+      <li><a href="/en/share-material-students-clients">Share material with students or clients without it getting lost</a></li>
+      <li><a href="/en/chrome-bookmarks-to-android">Move your Chrome bookmarks to your phone, organised</a></li>
+      <li><a href="/en/store-important-documents-phone">Important documents on your phone, organised and offline</a></li>
+    </ul>
+  </nav>
 </article>
-<footer>Linkalia &nbsp;·&nbsp; <a href="/en/">Home</a> &nbsp;·&nbsp; <a href="/en/tutorials">Tutorials</a> &nbsp;·&nbsp; <a href="/en/privacy">Privacy Policy</a></footer>
+<footer>Linkalia &nbsp;·&nbsp; <a href="/en/">Home</a> &nbsp;·&nbsp; <a href="/en/guides">Guides</a> &nbsp;·&nbsp; <a href="/en/tutorials">Tutorials</a> &nbsp;·&nbsp; <a href="/en/privacy">Privacy Policy</a></footer>
 </body>
 </html>
