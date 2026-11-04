@@ -96,13 +96,22 @@ p,ul,ol{margin-top:.8rem;color:rgba(246,238,241,.82)}
 ul,ol{padding-left:1.3rem}
 li{margin-top:.35rem}
 strong{color:var(--paper);font-weight:600}
-.play-top{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem;padding:.8rem 1rem;background:var(--ink-2);border:1px solid var(--line);border-radius:14px;font-size:.92rem;color:rgba(246,238,241,.82)}
-.play-top a{flex:none;background:var(--brand);color:var(--paper);text-decoration:none;font-weight:600;border-radius:999px;padding:.5rem 1rem;font-size:.88rem}
+.play-row{display:flex;align-items:stretch;justify-content:flex-start;gap:1rem;flex-wrap:wrap;margin-top:1.4rem}
+.cta .play-row{justify-content:center}
+.soon{display:flex;align-items:center;gap:1.25rem;background:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:1.25rem 1.75rem;max-width:30rem;text-align:left;text-decoration:none;transition:border-color .2s,transform .2s}
+.soon:hover{border-color:var(--brand);transform:translateY(-2px)}
+.soon svg{flex:none;width:54px;height:54px}
+.soon .label{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--paper);background:var(--brand);border-radius:999px;padding:.2rem .65rem}
+.soon .app-name{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--paper);margin-top:.4rem}
+.soon .hint{margin-top:.3rem;font-size:.85rem;line-height:1.45;color:rgba(246,238,241,.65)}
+.play-qr{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:1rem;font-size:.8rem;color:rgba(246,238,241,.65)}
+.play-qr img{display:block;width:124px;height:124px;border-radius:8px}
+/* En el móvil no tiene sentido escanear la propia pantalla: solo la insignia. */
+@media (max-width:640px){.play-qr{display:none}.soon{padding:1rem 1.2rem;gap:1rem}}
 .note{margin-top:1rem;padding:.9rem 1rem;border-left:3px solid var(--brand);background:rgba(194,42,95,.08);border-radius:0 10px 10px 0}
 .note p{margin-top:0}
 .cta{margin-top:2.6rem;padding:1.4rem;background:var(--ink-2);border:1px solid var(--line);border-radius:18px;text-align:center}
 .cta p{margin-top:0}
-.cta a.btn{display:inline-block;margin-top:1rem;background:var(--brand);color:var(--paper);text-decoration:none;font-weight:600;border-radius:999px;padding:.75rem 1.4rem}
 .related{margin-top:2.6rem}
 .related ul{list-style:none;padding:0}
 .related li{margin-top:.5rem}
@@ -135,7 +144,20 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
   <h1>How to send your clients properties, photos and documents in one link</h1>
   <p class="meta">Updated 4 November 2026 · Written by the Linkalia team</p>
   <p class="lede">A client is looking for a flat. You send three portal links, five photos, the listing PDF, the location and, once they decide, the tenancy agreement. All on WhatsApp, mixed in with messages from ten other agencies. Here's how to give them a tidy shortlist that stands out.</p>
-  <div class="play-top"><span><strong>Linkalia</strong> · Free for Android, no sign-up and no ads</span><a href="https://play.google.com/store/apps/details?id=com.linkalia&amp;referrer=utm_source%3Dlinkalia.org%26utm_medium%3Darticle%26utm_campaign%3Dg_inmobiliaria" rel="noopener" data-play="g_inmobiliaria" data-place="top">Open in Google Play</a></div>
+  <div class="play-row">
+    <a class="soon" href="https://play.google.com/store/apps/details?id=com.linkalia&amp;referrer=utm_source%3Dlinkalia.org%26utm_medium%3Darticle%26utm_campaign%3Dg_inmobiliaria" rel="noopener" data-play="g_inmobiliaria" data-place="top">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#00D7FE" d="M7.6 4.2 27 23.9 7.7 43.7c-.6-.4-1-1.2-1-2.1V6.3c0-.9.4-1.7.9-2.1z"/><path fill="#FFCE00" d="m33.6 30.5-6.6-6.6 6.6-6.6 7.9 4.5c2.3 1.3 2.3 3.4 0 4.7z"/><path fill="#FF3A44" d="M33.6 30.5 27 23.9 7.7 43.7c.7.7 1.9.8 3.2.1z"/><path fill="#00F076" d="M33.6 17.3 10.9 4.1c-1.3-.7-2.5-.6-3.3.1L27 23.9z"/></svg>
+      <div>
+        <span class="label">Get it on Google Play</span>
+        <div class="app-name">Linkalia for Android</div>
+        <div class="hint">Free, no sign-up and no ads.</div>
+      </div>
+    </a>
+    <div class="play-qr">
+      <img src="/img/google-play-qr.svg" width="124" height="124" alt="QR code for Linkalia on Google Play">
+      <span>Scan it with your phone</span>
+    </div>
+  </div>
 
   <h2>What to put in each client's shortlist</h2>
   <ul>
@@ -180,7 +202,20 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 
   <div class="cta">
     <p><strong>Properties, photos and documents for each client, in one link under your name.</strong> Try Linkalia for free.</p>
-    <a class="btn" href="https://play.google.com/store/apps/details?id=com.linkalia&amp;referrer=utm_source%3Dlinkalia.org%26utm_medium%3Darticle%26utm_campaign%3Dg_inmobiliaria" rel="noopener" data-play="g_inmobiliaria" data-place="bottom">Get it on Google Play</a>
+    <div class="play-row">
+    <a class="soon" href="https://play.google.com/store/apps/details?id=com.linkalia&amp;referrer=utm_source%3Dlinkalia.org%26utm_medium%3Darticle%26utm_campaign%3Dg_inmobiliaria" rel="noopener" data-play="g_inmobiliaria" data-place="bottom">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#00D7FE" d="M7.6 4.2 27 23.9 7.7 43.7c-.6-.4-1-1.2-1-2.1V6.3c0-.9.4-1.7.9-2.1z"/><path fill="#FFCE00" d="m33.6 30.5-6.6-6.6 6.6-6.6 7.9 4.5c2.3 1.3 2.3 3.4 0 4.7z"/><path fill="#FF3A44" d="M33.6 30.5 27 23.9 7.7 43.7c.7.7 1.9.8 3.2.1z"/><path fill="#00F076" d="M33.6 17.3 10.9 4.1c-1.3-.7-2.5-.6-3.3.1L27 23.9z"/></svg>
+      <div>
+        <span class="label">Get it on Google Play</span>
+        <div class="app-name">Linkalia for Android</div>
+        <div class="hint">Free, no sign-up and no ads.</div>
+      </div>
+    </a>
+    <div class="play-qr">
+      <img src="/img/google-play-qr.svg" width="124" height="124" alt="QR code for Linkalia on Google Play">
+      <span>Scan it with your phone</span>
+    </div>
+  </div>
   </div>
 
   <nav class="related" aria-label="More guides">

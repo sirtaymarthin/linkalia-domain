@@ -12,7 +12,8 @@ PLAY = "https://play.google.com/store/apps/details?id=com.linkalia"
 UI = {
     "es": {"home": "← Inicio", "updated": "Actualizado el 4 de noviembre de 2026 · Escrito por el equipo de Linkalia",
            "top": "<strong>Linkalia</strong> · Gratis para Android, sin registro y sin anuncios",
-           "top_btn": "Abrir en Google Play", "cta_btn": "Descargar en Google Play",
+           "badge": "Disponible en Google Play", "app": "Linkalia para Android", "hint": "Gratis, sin registro y sin anuncios.",
+           "qr_alt": "Código QR de Linkalia en Google Play", "qr": "Escanéalo con el móvil",
            "related": "Más guías", "faq": "Preguntas frecuentes",
            "foot": [("/", "Inicio"), ("/guias", "Guías"), ("/tutoriales", "Tutoriales"), ("/privacidad", "Política de privacidad")],
            "og": "/img/og-es.jpg", "locale": "es_ES", "hub": "/guias", "all": "Ver todas las guías",
@@ -28,7 +29,8 @@ UI = {
            "demo": "<strong>Míralo en la app:</strong> Linkalia trae de ejemplo la colección «{name}». Al instalarla la tienes en tu biblioteca para ver cómo queda antes de crear la tuya."},
     "en": {"home": "← Home", "updated": "Updated 4 November 2026 · Written by the Linkalia team",
            "top": "<strong>Linkalia</strong> · Free for Android, no sign-up and no ads",
-           "top_btn": "Open in Google Play", "cta_btn": "Get it on Google Play",
+           "badge": "Get it on Google Play", "app": "Linkalia for Android", "hint": "Free, no sign-up and no ads.",
+           "qr_alt": "QR code for Linkalia on Google Play", "qr": "Scan it with your phone",
            "related": "More guides", "faq": "Frequently asked questions",
            "foot": [("/en/", "Home"), ("/en/guides", "Guides"), ("/en/tutorials", "Tutorials"), ("/en/privacy", "Privacy Policy")],
            "og": "/img/og-en.jpg", "locale": "en_US", "hub": "/en/guides", "all": "See all guides",
@@ -62,13 +64,22 @@ p,ul,ol{margin-top:.8rem;color:rgba(246,238,241,.82)}
 ul,ol{padding-left:1.3rem}
 li{margin-top:.35rem}
 strong{color:var(--paper);font-weight:600}
-.play-top{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem;padding:.8rem 1rem;background:var(--ink-2);border:1px solid var(--line);border-radius:14px;font-size:.92rem;color:rgba(246,238,241,.82)}
-.play-top a{flex:none;background:var(--brand);color:var(--paper);text-decoration:none;font-weight:600;border-radius:999px;padding:.5rem 1rem;font-size:.88rem}
+.play-row{display:flex;align-items:stretch;justify-content:flex-start;gap:1rem;flex-wrap:wrap;margin-top:1.4rem}
+.cta .play-row{justify-content:center}
+.soon{display:flex;align-items:center;gap:1.25rem;background:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:1.25rem 1.75rem;max-width:30rem;text-align:left;text-decoration:none;transition:border-color .2s,transform .2s}
+.soon:hover{border-color:var(--brand);transform:translateY(-2px)}
+.soon svg{flex:none;width:54px;height:54px}
+.soon .label{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--paper);background:var(--brand);border-radius:999px;padding:.2rem .65rem}
+.soon .app-name{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--paper);margin-top:.4rem}
+.soon .hint{margin-top:.3rem;font-size:.85rem;line-height:1.45;color:rgba(246,238,241,.65)}
+.play-qr{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;background:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:1rem;font-size:.8rem;color:rgba(246,238,241,.65)}
+.play-qr img{display:block;width:124px;height:124px;border-radius:8px}
+/* En el móvil no tiene sentido escanear la propia pantalla: solo la insignia. */
+@media (max-width:640px){.play-qr{display:none}.soon{padding:1rem 1.2rem;gap:1rem}}
 .note{margin-top:1rem;padding:.9rem 1rem;border-left:3px solid var(--brand);background:rgba(194,42,95,.08);border-radius:0 10px 10px 0}
 .note p{margin-top:0}
 .cta{margin-top:2.6rem;padding:1.4rem;background:var(--ink-2);border:1px solid var(--line);border-radius:18px;text-align:center}
 .cta p{margin-top:0}
-.cta a.btn{display:inline-block;margin-top:1rem;background:var(--brand);color:var(--paper);text-decoration:none;font-weight:600;border-radius:999px;padding:.75rem 1.4rem}
 .related{margin-top:2.6rem}
 .related ul{list-style:none;padding:0}
 .related li{margin-top:.5rem}
@@ -101,6 +112,28 @@ e = lambda s: html.escape(s, quote=True)
 def play_url(campaign):
     # El referrer llega a Play Console (Adquisición de usuarios) y dice qué artículo trae instalaciones.
     return f"{PLAY}&amp;referrer=utm_source%3Dlinkalia.org%26utm_medium%3Darticle%26utm_campaign%3D{campaign}"
+
+
+PLAY_ICON = '<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#00D7FE" d="M7.6 4.2 27 23.9 7.7 43.7c-.6-.4-1-1.2-1-2.1V6.3c0-.9.4-1.7.9-2.1z"/><path fill="#FFCE00" d="m33.6 30.5-6.6-6.6 6.6-6.6 7.9 4.5c2.3 1.3 2.3 3.4 0 4.7z"/><path fill="#FF3A44" d="M33.6 30.5 27 23.9 7.7 43.7c.7.7 1.9.8 3.2.1z"/><path fill="#00F076" d="M33.6 17.3 10.9 4.1c-1.3-.7-2.5-.6-3.3.1L27 23.9z"/></svg>'
+
+
+def play_block(lang, camp, place):
+    """Igual que en la portada: insignia de Google Play y, al lado, el QR (oculto en el móvil)."""
+    u = UI[lang]
+    return f"""<div class="play-row">
+    <a class="soon" href="{play_url(camp)}" rel="noopener" data-play="{camp}" data-place="{place}">
+      {PLAY_ICON}
+      <div>
+        <span class="label">{u['badge']}</span>
+        <div class="app-name">{u['app']}</div>
+        <div class="hint">{u['hint']}</div>
+      </div>
+    </a>
+    <div class="play-qr">
+      <img src="/img/google-play-qr.svg" width="124" height="124" alt="{u['qr_alt']}">
+      <span>{u['qr']}</span>
+    </div>
+  </div>"""
 
 
 def head(lang, title, desc, path, alt_es, alt_en, ld, og_type="article"):
@@ -206,7 +239,7 @@ def article(a, lang):
   <h1>{e(c['h1'])}</h1>
   <p class="meta">{u['updated']}</p>
   <p class="lede">{c['lede']}</p>
-  <div class="play-top"><span>{u['top']}</span><a href="{play_url(camp)}" rel="noopener" data-play="{camp}" data-place="top">{u['top_btn']}</a></div>
+  {play_block(lang, camp, 'top')}
 {c['body']}
 {group_block(a, lang) if 'channel' in c else ''}
   <h2>{u['faq']}</h2>
@@ -216,7 +249,7 @@ def article(a, lang):
     out += f"""
   <div class="cta">
     <p>{c['cta']}</p>
-    <a class="btn" href="{play_url(camp)}" rel="noopener" data-play="{camp}" data-place="bottom">{u['cta_btn']}</a>
+    {play_block(lang, camp, 'bottom')}
   </div>
 
   <nav class="related" aria-label="{u['related']}">
@@ -237,7 +270,7 @@ def hub(lang):
     out += f"""<main class="hub">
   <h1>{e(h['h1'])}</h1>
   <p class="lede">{h['lede']}</p>
-  <div class="play-top"><span>{u['top']}</span><a href="{play_url('guides')}" rel="noopener" data-play="guides" data-place="top">{u['top_btn']}</a></div>
+  {play_block(lang, 'guides', 'top')}
   <h2>{GROUPS_HUB[lang]['problems']}</h2>
   <ul class="cards">
 """
