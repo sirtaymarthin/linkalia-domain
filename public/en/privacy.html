@@ -239,7 +239,7 @@
   When you open the application for the first time, a unique random identifier (UUID) is automatically generated on your device. This identifier is not linked to your name, email address, phone number, or any personal data. It is used solely to manage your collections and your storage quota on the server.</p>
 
   <p><strong style="color:var(--paper)">Username (optional)</strong><br>
-  You may choose a visible name to identify yourself in collaborative collections. This name is entirely free — you can use a pseudonym or any text you prefer. We do not verify it or link it to any real identity.</p>
+  You may choose a visible name to identify yourself in collaborative collections. This name is entirely free — you can use a pseudonym or any text you prefer. We do not verify it or link it to any real identity. We store it on our server alongside your anonymous identifier, so that we can help you if you write to us and for our internal statistics. If you change it in Settings, the new one replaces the old one.</p>
 
   <p><strong style="color:var(--paper)">Content you provide</strong><br>
   The links, documents, images, and files you save in Linkalia are stored on servers located in the European Union (Cloudflare R2, EU jurisdiction). This content belongs to you and you control it at all times.</p>
@@ -266,11 +266,18 @@
   <p><strong style="color:var(--paper)">Date of last connection</strong><br>
   Each time you open the app, we store the day you did so (the date only, no time) alongside your anonymous identifier. Each day replaces the previous one, so there is no history of when you use the app or what you do in it. We use it to know how many accounts are still active and to identify inactive accounts.</p>
 
+  <p><strong style="color:var(--paper)">Anonymous usage statistics</strong><br>
+  To learn which features are used and which to improve, the app collects usage statistics that never include what you save: no links, titles, notes, collection names or files. You can turn them off at any time in Settings → Anonymous statistics. There are two kinds:</p>
+  <ul>
+    <li><strong style="color:var(--paper)">Totals on our server:</strong> once a day, the app sends a few counts alongside your anonymous identifier: how many collections and items of each type you have (links, photos, videos, documents), how often you have saved from the Share menu or from the app itself, how many days you have opened it, and the app's version and language. Each upload replaces the previous one, with no history.</li>
+    <li><strong style="color:var(--paper)">Google Analytics for Firebase:</strong> the app records individual actions, such as opening it, saving an item, creating or sharing a collection or finishing the introduction, together with technical device data (model, Android version, app version) and the approximate country or city that Google infers from the IP address. It uses a random identifier specific to this installation, different from your Linkalia identifier. We have set it up with no advertising identifier, no data for ads or personalisation, and a data retention of 2 months. Google acts as a data processor and may process the data outside the European Union, under the safeguards of the EU-US Data Privacy Framework. You can review its policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
+  </ul>
+
   <h2>3. What data we do NOT collect</h2>
   <ul>
     <li>Real name or phone number, nor your email address unless you link your Google account</li>
-    <li>Geographic location</li>
-    <li>Browsing data or usage history</li>
+    <li>Precise location (GPS); at most, the approximate country or city that Google Analytics infers from the IP address</li>
+    <li>Browsing data, or which links or documents you save or open</li>
     <li>Device contacts</li>
     <li>Advertising identifiers</li>
     <li>Any form of cross-app tracking</li>
@@ -284,6 +291,7 @@
     <li>To keep the cloud backup of your Private collections (Pro) and restore it when you need it</li>
     <li>To help you recover your account when you reinstall the app or switch phones</li>
     <li>To know how many accounts are still active (internal statistics based on the date of last connection)</li>
+    <li>To learn which features are used and improve the app (anonymous usage statistics, which you can turn off)</li>
   </ul>
   <p>We do not use your data for advertising, nor do we share it with third parties for commercial purposes.</p>
 

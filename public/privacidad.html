@@ -241,7 +241,7 @@
   Al abrir la aplicación por primera vez, se genera automáticamente un identificador único aleatorio (UUID) en tu dispositivo. Este identificador no está vinculado a tu nombre, correo, número de teléfono ni ningún dato personal. Se usa únicamente para gestionar tus colecciones y tu cuota de almacenamiento en el servidor.</p>
 
   <p><strong style="color:var(--paper)">Nombre de usuario (opcional)</strong><br>
-  Puedes elegir un nombre visible para identificarte en colecciones colaborativas. Este nombre es totalmente libre — puedes usar un pseudónimo o cualquier texto que prefieras. No lo verificamos ni lo vinculamos a ninguna identidad real.</p>
+  Puedes elegir un nombre visible para identificarte en colecciones colaborativas. Este nombre es totalmente libre — puedes usar un pseudónimo o cualquier texto que prefieras. No lo verificamos ni lo vinculamos a ninguna identidad real. Lo guardamos en el servidor junto a tu identificador anónimo, para poder atenderte si nos escribes y para nuestras estadísticas internas. Si lo cambias en Ajustes, el nuevo sustituye al anterior.</p>
 
   <p><strong style="color:var(--paper)">Contenido que tú introduces</strong><br>
   Los enlaces, documentos, imágenes y archivos que guardas en Linkalia se almacenan en servidores ubicados en la Unión Europea (Cloudflare R2, jurisdicción EU). Este contenido es tuyo y lo controlas tú en todo momento.</p>
@@ -268,11 +268,18 @@
   <p><strong style="color:var(--paper)">Fecha de última conexión</strong><br>
   Cada vez que abres la aplicación, guardamos junto a tu identificador anónimo el día en que lo hiciste (solo la fecha, sin hora). Cada día sustituye al anterior, así que no queda ningún historial de cuándo usas la aplicación ni de qué haces en ella. Lo usamos para saber cuántas cuentas siguen activas y para identificar las cuentas inactivas.</p>
 
+  <p><strong style="color:var(--paper)">Estadísticas anónimas de uso</strong><br>
+  Para saber qué funciones se usan y cuáles mejorar, la aplicación recoge estadísticas de uso que nunca incluyen lo que guardas: ni enlaces, ni títulos, ni notas, ni nombres de colecciones, ni archivos. Puedes desactivarlas en cualquier momento en Ajustes → Estadísticas anónimas. Son de dos tipos:</p>
+  <ul>
+    <li><strong style="color:var(--paper)">Totales en nuestro servidor:</strong> una vez al día, la aplicación envía junto a tu identificador anónimo unos recuentos: cuántas colecciones y elementos tienes de cada tipo (enlaces, fotos, vídeos, documentos), cuántas veces has guardado desde el menú Compartir o desde la propia aplicación, cuántos días la has abierto, la versión de la aplicación y su idioma. Cada envío sustituye al anterior, sin historial.</li>
+    <li><strong style="color:var(--paper)">Google Analytics para Firebase:</strong> la aplicación registra acciones sueltas, como abrirla, guardar un elemento, crear o compartir una colección o terminar la presentación inicial, junto con datos técnicos del móvil (modelo, versión de Android, versión de la aplicación) y el país o la ciudad aproximados que Google deduce de la dirección IP. Usa un identificador aleatorio propio de esta instalación, distinto de tu identificador de Linkalia. Lo hemos configurado sin identificador de publicidad, sin datos para anuncios ni personalización, y conservando los datos 2 meses. Google actúa como encargado del tratamiento y puede tratarlos fuera de la Unión Europea, con las garantías del Marco de Privacidad de Datos UE-EE. UU. Puedes consultar su política en <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
+  </ul>
+
   <h2>3. Qué datos NO recogemos</h2>
   <ul>
     <li>Nombre real o número de teléfono, ni tu correo electrónico salvo que vincules tu cuenta de Google</li>
-    <li>Ubicación geográfica</li>
-    <li>Datos de navegación o historial de uso</li>
+    <li>Ubicación precisa (GPS); como mucho, el país o la ciudad aproximados que Google Analytics deduce de la dirección IP</li>
+    <li>Datos de navegación, ni qué enlaces o documentos guardas o abres</li>
     <li>Información de contactos del dispositivo</li>
     <li>Identificadores publicitarios</li>
     <li>Cualquier tipo de seguimiento entre aplicaciones</li>
@@ -286,6 +293,7 @@
     <li>Guardar la copia en la nube de tus colecciones Privadas (Pro) y devolvértela cuando la necesites</li>
     <li>Ayudarte a recuperar tu cuenta al reinstalar la aplicación o cambiar de móvil</li>
     <li>Saber cuántas cuentas siguen activas (estadísticas internas a partir de la fecha de última conexión)</li>
+    <li>Saber qué funciones se usan y mejorar la aplicación (estadísticas anónimas de uso, que puedes desactivar)</li>
   </ul>
   <p>No utilizamos tus datos para publicidad, ni los cedemos a terceros con fines comerciales.</p>
 
