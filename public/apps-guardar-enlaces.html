@@ -85,6 +85,8 @@ ul{padding-left:1.3rem}
 li{margin-top:.35rem}
 strong{color:var(--paper);font-weight:600}
 .table-wrap{overflow-x:auto;margin-top:1rem;border:1px solid var(--line);border-radius:14px}
+.table-wrap.wide{width:min(1240px,calc(100vw - 32px));position:relative;left:50%;transform:translateX(-50%)}
+.table-wrap.wide th:nth-child(2),.table-wrap.wide td:nth-child(2){background:rgba(194,42,95,.18);font-weight:600;color:var(--paper)}
 table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem}
 th,td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--ink-2);font-weight:600;color:var(--paper)}
@@ -193,18 +195,18 @@ footer a{color:inherit;opacity:.7}
   <p><strong>Elígela si</strong> quieres tener en un mismo sitio enlaces y documentos, o compartirlos con un grupo.</p>
 
   <h2>Comparativa rápida</h2>
-  <div class="table-wrap">
+  <div class="table-wrap wide">
     <table style="min-width:1000px">
-      <thead><tr><th></th><th>Raindrop.io</th><th>Instapaper</th><th>Readwise Reader</th><th>Wallabag</th><th>Tuckii</th><th>Link</th><th>Gatherly</th><th>Files de Google</th><th>Linkalia</th></tr></thead>
+      <thead><tr><th></th><th>Linkalia</th><th>Raindrop.io</th><th>Instapaper</th><th>Readwise Reader</th><th>Wallabag</th><th>Tuckii</th><th>Link</th><th>Gatherly</th><th>Files de Google</th></tr></thead>
       <tbody>
-        <tr><td>Guarda enlaces</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td><td>Sí</td></tr>
-        <tr><td>Guarda documentos y fotos</td><td>Sí</td><td>—</td><td>Sí (PDF, libros)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>Sí</td><td>Sí</td></tr>
-        <tr><td>Desde el botón Compartir</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>—</td><td>Sí</td></tr>
-        <tr><td>Pensada para leer más tarde</td><td>—</td><td>Sí</td><td>Sí</td><td>Sí</td><td>—</td><td>—</td><td>Sí</td><td>No</td><td>No</td></tr>
-        <tr><td>Compartir colecciones con otros</td><td>Sí</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>Sí (Canal o Colaborativa)</td></tr>
-        <tr><td>Funciona sin cuenta</td><td>No</td><td>No</td><td>No</td><td>No</td><td>Sí</td><td>—</td><td>—</td><td>Sí</td><td>Sí</td></tr>
-        <tr><td>Ordenador y iPhone</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>—</td><td>—</td><td>—</td><td>—</td><td>No (solo Android)</td></tr>
-        <tr><td>Precio</td><td>Gratis + plan de pago</td><td>Gratis + Premium</td><td>De pago (prueba gratis)</td><td>Gratis autoalojada o unos 11 €/año</td><td>—</td><td>—</td><td>—</td><td>Gratis</td><td>Gratis + Pro opcional</td></tr>
+        <tr><td>Guarda enlaces</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>No</td></tr>
+        <tr><td>Guarda documentos y fotos</td><td>Sí</td><td>Sí</td><td>—</td><td>Sí (PDF, libros)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>Sí</td></tr>
+        <tr><td>Desde el botón Compartir</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>—</td></tr>
+        <tr><td>Pensada para leer más tarde</td><td>No</td><td>—</td><td>Sí</td><td>Sí</td><td>Sí</td><td>—</td><td>—</td><td>Sí</td><td>No</td></tr>
+        <tr><td>Compartir colecciones con otros</td><td>Sí (Canal o Colaborativa)</td><td>Sí</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>Funciona sin cuenta</td><td>Sí</td><td>No</td><td>No</td><td>No</td><td>No</td><td>Sí</td><td>—</td><td>—</td><td>Sí</td></tr>
+        <tr><td>Ordenador y iPhone</td><td>No (solo Android)</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>Precio</td><td>Gratis + Pro opcional</td><td>Gratis + plan de pago</td><td>Gratis + Premium</td><td>De pago (prueba gratis)</td><td>Gratis autoalojada o unos 11 €/año</td><td>—</td><td>—</td><td>—</td><td>Gratis</td></tr>
       </tbody>
     </table>
   </div>
