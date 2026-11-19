@@ -1,10 +1,10 @@
 # Textos de las guías. Cada artículo ataca un problema concreto; datos de la app comprobados en el código (2026-11-04).
 
 EXISTING = {
-    "es": {"path": "/apps-guardar-enlaces", "short": "Apps para guardar enlaces en Android (y alternativas a Pocket)",
-           "summary": "Raindrop.io, Link, Gatherly, Files de Google y Linkalia comparadas."},
-    "en": {"path": "/en/link-saver-apps", "short": "Link saver apps for Android (and Pocket alternatives)",
-           "summary": "Raindrop.io, Link, Gatherly, Files by Google and Linkalia compared."},
+    "es": {"path": "/apps-guardar-enlaces", "short": "La mejor aplicación para organizar enlaces en Android: 9 apps comparadas (2026)",
+           "summary": "Raindrop.io, Instapaper, Readwise Reader, Wallabag, Tuckii, Link, Gatherly, Files de Google y Linkalia comparadas."},
+    "en": {"path": "/en/link-saver-apps", "short": "The Best App to Organize Links on Android: 9 Apps Compared (2026)",
+           "summary": "Raindrop.io, Instapaper, Readwise Reader, Wallabag, Tuckii, Link, Gatherly, Files by Google and Linkalia compared."},
 }
 
 HUB = {

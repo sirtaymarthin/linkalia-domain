@@ -299,7 +299,7 @@ for lang in ("es", "en"):
 # Sitemap: lo existente + guías + artículos.
 urls = [("/", "2026-11-04"), ("/en/", "2026-11-04"), ("/tutoriales", "2026-10-14"), ("/en/tutorials", "2026-10-14"),
         ("/guias", DATE), ("/en/guides", DATE),
-        (EXISTING["es"]["path"], DATE), (EXISTING["en"]["path"], DATE)]
+        (EXISTING["es"]["path"], "2026-11-19"), (EXISTING["en"]["path"], "2026-11-19")]
 for a in ARTICLES + GROUPS:
     urls += [(a["es"]["path"], DATE), (a["en"]["path"], DATE)]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
